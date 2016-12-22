@@ -13,20 +13,21 @@
       <label for="attending">Will you attend?</label>
       Yes{{radio-button value=true checked=willAttend}}
       No{{radio-button value=false checked=willAttend}}
-
+      <!-- If yes, above, show -->
       {{#if willAttend}}
         <label for="numOfPeople">Number of people in your party:</label>
           1{{radio-button value=false checked=numPeople}}
           2{{radio-button value=true checked=numPeople}}
-        </select>
+      {{/if}}
+      <!-- If two, above, show -->
+      {{#if numPeople}}
+        <label for="guestName">Full name of your guest:</label>
+        {{input id="guestName" value=guestName}}
       {{/if}}
 
-      {{#if numPeople}}
-        <label for="guestName">Name of your guest:</label>
-        {{input id="guestName"}}
-      {{/if}}
       <button type="button" name="back">BACK</button>
       <button type="button" disabled={{isDisabledAttending}} name="next">NEXT</button>
+
     </div>
 
     <!-- Your choice of entree question -->
