@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'wedding',
+    podModulePrefix: 'wedding/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
