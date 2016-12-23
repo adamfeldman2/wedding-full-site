@@ -35,13 +35,13 @@
         <!-- User's dietary restriction question -->
         <div class="dietary question-box">
           <label for="yourDietary">{{nameValue}}'s dietary restrictions:</label>
-          {{input id="yourDietary" placeholder="Leave blank if none"}}
+          {{input id="yourDietary" placeholder="Leave blank if none" value=userDietary}}
 
 
         {{#if numPeople}}
           <!-- Guest's dietary restriction question -->
           <label for="guestDietary">{{guestName}}'s dietary restrictions:</label>
-          {{input id="guestDietary" placeholder="Leave blank if none"}}
+          {{input id="guestDietary" placeholder="Leave blank if none" value=guestDietary}}
         {{/if}}
 
         <button type="button" name="back" {{action 'backToAttendingQuestion'}}>Back</button>
