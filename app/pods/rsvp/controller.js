@@ -10,12 +10,6 @@ export default Ember.Controller.extend({
   numPeople: null,
   notNumPeople: Ember.computed.equal('numPeople', false),
 
-  guestName: '',
-  guestNameValid: Ember.computed.gte('guestName.length', 3),
-
-  danceValue: '',
-  danceValueContent: Ember.computed.gte('danceValue.length', 4),
-
   trueAttending1: Ember.computed.and('willAttend','numPeople', 'guestNameValid'),
 
   trueAttending2: Ember.computed.and('willAttend','notNumPeople'),
@@ -25,31 +19,68 @@ export default Ember.Controller.extend({
 
   isDisabledAttending: Ember.computed.not('isValidAttending'),
 
+  guestName: '',
+  guestNameValid: Ember.computed.gte('guestName.length', 3),
+
+  danceValue: '',
+  danceValueContent: Ember.computed.gte('danceValue.length', 4),
+
+  commentsValue: '',
+
+  attendingSubmitMessage: 'Submission received! We\'ll see you on August 27th! 🎉',
+
+  notAttendingSubmitMessage: 'It won\'t be the same without you, but we understand. Take care!',
+
+
   actions: {
+    backToNameQuestion() {
+      Ember.$('.attending').hide();
+      Ember.$('.fullName').show();
+    },
+
     displayAttendingQuestion() {
-      $('.fullName').hide();
-      $('.dance').hide();
+      Ember.$('.fullName').hide();
+      Ember.$('.dance').hide();
       this.set('displayAttendingQuestion', true);
+      Ember.$('.attending').show();
+    },
+
+    backToAttendingQuestion() {
+      Ember.$('.dietary').hide();
+      Ember.$('.attending').show();
     },
 
     displayDietaryQuestion() {
-      $('.attending').hide();
+      Ember.$('.attending').hide();
       this.set('displayDietaryQuestion', true);
+      Ember.$('.dietary').show();
+    },
+
+    backToDietaryQuestion() {
+      Ember.$('.dance').hide();
+      Ember.$('.dietary').show();
     },
 
     displayDanceQuestion () {
-      $('.dietary').hide();
+      Ember.$('.dietary').hide();
       this.set('displayDanceQuestion', true);
+      Ember.$('.dance').show();
+    },
+
+    backToDanceQuestion() {
+      Ember.$('.comments').hide();
+      Ember.$('.dance').show();
     },
 
     displayCommentsQuestion() {
-      $('.dance').hide();
+      Ember.$('.dance').hide();
       this.set('displayCommentsQuestion', true);
+      Ember.$('.comments').show();
     },
 
     submitRSVP() {
-      $('.comments').hide();
-      this.set('submitMessage', 'Your RSVP has been received!');
+      Ember.$('.comments').hide();
+      this.set('submitMessage', true);
     }
   }
 

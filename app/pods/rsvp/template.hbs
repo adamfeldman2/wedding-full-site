@@ -26,7 +26,7 @@
         {{input id="guestName" value=guestName}}
       {{/if}}
 
-      <button type="button" name="back">Back</button>
+      <button type="button" name="back" {{action 'backToNameQuestion'}}>Back</button>
       <button type="button" disabled={{if isDisabledAttending true false}} name="next" {{action 'displayDietaryQuestion'}}>Next</button>
 
     </div>
@@ -41,10 +41,10 @@
         {{#if numPeople}}
           <!-- Guest's dietary restriction question -->
           <label for="guestDietary">{{guestName}}'s dietary restrictions:</label>
-          {{input id="guestDietary" placeholder="(ex. Vegetarian, etc...)"}}
+          {{input id="guestDietary" placeholder="Leave blank if none"}}
         {{/if}}
 
-        <button type="button" name="back">Back</button>
+        <button type="button" name="back" {{action 'backToAttendingQuestion'}}>Back</button>
         <button type="button" name="next" {{action 'displayDanceQuestion'}}>Next</button>
         </div>
       {{/if}}
@@ -53,8 +53,8 @@
         <!-- Promise to dance question -->
         <div class="dance question-box">
           <label for="dance">I promise to dance if you play:</label>
-          {{input id="dance" value=danceValue}}
-          <button type="button" name="back">Back</button>
+          {{input id="dance" value=danceValue placeholder="(eg. Rick Astley - Never Gonna Give You Up)"}}
+          <button type="button" name="back" {{action 'backToDietaryQuestion'}}>Back</button>
           <button type="button" name="next" {{action 'displayCommentsQuestion'}}>{{if danceValueContent 'Party on!' 'Next'}}</button>
         </div>
       {{/if}}
@@ -63,15 +63,19 @@
         <!-- Comments question -->
         <div class="comments question-box">
           <label for="comments">Comments:</label>
-          {{input id="comments"}}
-          <button type="button" name="back">Back</button>
+          {{textarea id="comments" cols="10" rows="7" value=commentsValue}}
+          <button type="button" name="back" {{action 'backToDanceQuestion'}}>Back</button>
           <button type="button" name="submit" {{action 'submitRSVP'}}>Submit</button>
         </div>
       {{/if}}
-    {{/if}}
+  {{/if}}
 
       {{#if submitMessage}}
-        <div class="submit-message">{{submitMessage}}</div>
+        {{#if willAttend}}
+          <div class="submit-message">{{attendingSubmitMessage}}</div>
+        {{else}}
+          <div class="submit-message">{{notAttendingSubmitMessage}}</div>
+        {{/if}}
         {{link-to 'Return to Home Page' 'home'}}
       {{/if}}
 </div>
