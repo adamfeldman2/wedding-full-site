@@ -8,47 +8,53 @@
     <button disabled={{isDisabledName}} type="button" name="next">NEXT</button>
   </div>
 
-    <!-- Will you attend question -->
-    <div class="attending question-box">
-      <label for="attending">Will you attend?</label>
-      Yes{{radio-button value=true checked=willAttend}}
-      No{{radio-button value=false checked=willAttend}}
-      <!-- If yes, above, show -->
-      {{#if willAttend}}
-        <label for="numOfPeople">Number of people in your party:</label>
-          1{{radio-button value=false checked=numPeople}}
-          2{{radio-button value=true checked=numPeople}}
-      {{/if}}
-      <!-- If two, above, show -->
+      <!-- Will you attend question -->
+      <div class="attending question-box">
+        <label for="attending">Will you attend?</label>
+        Yes{{radio-button value=true checked=willAttend}}
+        No{{radio-button value=false checked=willAttend}}
+        <!-- If yes, above, show -->
+        {{#if willAttend}}
+          <label for="numOfPeople">Number of people in your party:</label>
+            1{{radio-button value=false checked=numPeople}}
+            2{{radio-button value=true checked=numPeople}}
+        {{/if}}
+        <!-- If two, above, show -->
+        {{#if numPeople}}
+          <label for="guestName">Full name of your guest:</label>
+          {{input id="guestName" value=guestName}}
+        {{/if}}
+
+        <button type="button" name="back">BACK</button>
+        <button type="button" disabled={{if isDisabledAttending true false}} name="next">NEXT</button>
+
+      </div>
+
+    {{#if willAttend}}
+      <!-- Your choice of entree question -->
+      <div class="entree question-box">
+        <label for="yourEntree">Your choice of entree:</label>
+        Chicken{{input type="radio" name="entree" value="Chicken"}}
+        Beef{{input type="radio" name="entree" value="Beef"}}
+        Vegetarian{{input type="radio" name="entree" value="Vegetarian"}}
+        <label for="yourDietary">Your dietary restrictions:</label>
+        {{input id="yourDietary"}}
+
+
       {{#if numPeople}}
-        <label for="guestName">Full name of your guest:</label>
-        {{input id="guestName" value=guestName}}
+        <!-- Guest's choice of entree question -->
+        <label for="yourEntree">Guest's choice of entree:</label>
+        Chicken{{input type="radio" name="entree" value="Chicken"}}
+        Beef{{input type="radio" name="entree" value="Beef"}}
+        Vegetarian{{input type="radio" name="entree" value="Vegetarian"}}
+        <label for="guestDietary">Guest's dietary restrictions:</label>
+        {{input id="guestDietary"}}
+        <button type="button" name="back">BACK</button>
+        <button disabled={{isDisabledEntree}} type="button" name="next">NEXT</button>
       {{/if}}
 
-      <button type="button" name="back">BACK</button>
-      <button type="button" disabled={{isDisabledAttending}} name="next">NEXT</button>
-
-    </div>
-
-    <!-- Your choice of entree question -->
-    <div class="entree question-box">
-      <label for="yourEntree">Your choice of entree:</label>
-      Chicken{{input type="radio" name="entree" value="Chicken"}}
-      Beef{{input type="radio" name="entree" value="Beef"}}
-      Vegetarian{{input type="radio" name="entree" value="Vegetarian"}}
-      <label for="yourDietary">Your dietary restrictions:</label>
-      {{input id="yourDietary"}}
-
-      <!-- Guest's choice of entree question -->
-      <label for="yourEntree">Guest's choice of entree:</label>
-      Chicken{{input type="radio" name="entree" value="Chicken"}}
-      Beef{{input type="radio" name="entree" value="Beef"}}
-      Vegetarian{{input type="radio" name="entree" value="Vegetarian"}}
-      <label for="guestDietary">Guest's dietary restrictions:</label>
-      {{input id="guestDietary"}}
-      <button type="button" name="back">BACK</button>
-      <button disabled={{isDisabledEntree}} type="button" name="next">NEXT</button>
-    </div>
+      </div>
+    {{/if}}
 
     <!-- Comments questions -->
     <div class="comments question-box">
