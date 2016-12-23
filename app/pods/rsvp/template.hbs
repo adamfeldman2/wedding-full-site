@@ -5,10 +5,10 @@
   <div class="fullName question-box">
     <label for="fullName">Your full name:</label>
     {{input id="fullName" autofocus="autofocus" value=nameValue}}
-    <button disabled={{isDisabledName}} type="button" name="next">Next</button>
+    <button disabled={{isDisabledName}} {{action 'displayAttendingQuestion'}} type="button" name="next">Next</button>
   </div>
 
-  {{#if validName}}
+  {{#if displayAttendingQuestion}}
     <!-- Will you attend question -->
     <div class="attending question-box">
       <label for="attending">Will you attend?</label>
@@ -27,49 +27,53 @@
       {{/if}}
 
       <button type="button" name="back">Back</button>
-      <button type="button" disabled={{if isDisabledAttending true false}} name="next">Next</button>
+      <button type="button" disabled={{if isDisabledAttending true false}} name="next" {{action 'displayDietaryQuestion'}}>Next</button>
 
     </div>
 
-      {{#if willAttend}}
-        <!-- Your choice of entree question -->
+      {{#if displayDietaryQuestion}}
+        <!-- User's dietary restriction question -->
         <div class="dietary question-box">
           <label for="yourDietary">{{nameValue}}'s dietary restrictions:</label>
           {{input id="yourDietary" placeholder="Leave blank if none"}}
 
 
         {{#if numPeople}}
-          <!-- Guest's choice of entree question -->
+          <!-- Guest's dietary restriction question -->
           <label for="guestDietary">{{guestName}}'s dietary restrictions:</label>
           {{input id="guestDietary" placeholder="(ex. Vegetarian, etc...)"}}
         {{/if}}
 
         <button type="button" name="back">Back</button>
-        <button type="button" name="next">Next</button>
+        <button type="button" name="next" {{action 'displayDanceQuestion'}}>Next</button>
         </div>
       {{/if}}
 
-      <!-- Promise to dance question -->
-      <div class="dance question-box">
-        <label for="dance">I promise to dance if you play:</label>
-        {{input id="dance" value=danceValue}}
-        <button type="button" name="back">Back</button>
-      {{#if danceValueContent}}
-        <button type="button" name="partyOn">Party on!</button>
-      {{else}}
-        <button type="button" name="next">Next</button>
+      {{#if displayDanceQuestion}}
+        <!-- Promise to dance question -->
+        <div class="dance question-box">
+          <label for="dance">I promise to dance if you play:</label>
+          {{input id="dance" value=danceValue}}
+          <button type="button" name="back">Back</button>
+          <button type="button" name="next" {{action 'displayCommentsQuestion'}}>{{if danceValueContent 'Party on!' 'Next'}}</button>
+        </div>
       {{/if}}
-      </div>
 
-      <!-- Comments question -->
-      <div class="comments question-box">
-        <label for="comments">Comments:</label>
-        {{input id="comments"}}
-        <button type="button" name="back">Back</button>
-        <button type="button" name="submit">Submit</button>
-      </div>
+      {{#if displayCommentsQuestion}}
+        <!-- Comments question -->
+        <div class="comments question-box">
+          <label for="comments">Comments:</label>
+          {{input id="comments"}}
+          <button type="button" name="back">Back</button>
+          <button type="button" name="submit" {{action 'submitRSVP'}}>Submit</button>
+        </div>
+      {{/if}}
     {{/if}}
 
+      {{#if submitMessage}}
+        <div class="submit-message">{{submitMessage}}</div>
+        {{link-to 'Return to Home Page' 'home'}}
+      {{/if}}
 </div>
 
 {{outlet}}

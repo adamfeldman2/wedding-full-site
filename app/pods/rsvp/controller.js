@@ -25,6 +25,34 @@ export default Ember.Controller.extend({
 
   isDisabledAttending: Ember.computed.not('isValidAttending'),
 
+  actions: {
+    displayAttendingQuestion() {
+      $('.fullName').hide();
+      $('.dance').hide();
+      this.set('displayAttendingQuestion', true);
+    },
+
+    displayDietaryQuestion() {
+      $('.attending').hide();
+      this.set('displayDietaryQuestion', true);
+    },
+
+    displayDanceQuestion () {
+      $('.dietary').hide();
+      this.set('displayDanceQuestion', true);
+    },
+
+    displayCommentsQuestion() {
+      $('.dance').hide();
+      this.set('displayCommentsQuestion', true);
+    },
+
+    submitRSVP() {
+      $('.comments').hide();
+      this.set('submitMessage', 'Your RSVP has been received!');
+    }
+  }
+
 
 
 
