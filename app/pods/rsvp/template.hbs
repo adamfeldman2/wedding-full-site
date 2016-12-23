@@ -5,64 +5,70 @@
   <div class="fullName question-box">
     <label for="fullName">Your full name:</label>
     {{input id="fullName" autofocus="autofocus" value=nameValue}}
-    <button disabled={{isDisabledName}} type="button" name="next">NEXT</button>
+    <button disabled={{isDisabledName}} type="button" name="next">Next</button>
   </div>
 
-      <!-- Will you attend question -->
-      <div class="attending question-box">
-        <label for="attending">Will you attend?</label>
-        Yes{{radio-button value=true checked=willAttend}}
-        No{{radio-button value=false checked=willAttend}}
-        <!-- If yes, above, show -->
-        {{#if willAttend}}
-          <label for="numOfPeople">Number of people in your party:</label>
-            1{{radio-button value=false checked=numPeople}}
-            2{{radio-button value=true checked=numPeople}}
-        {{/if}}
-        <!-- If two, above, show -->
-        {{#if numPeople}}
-          <label for="guestName">Full name of your guest:</label>
-          {{input id="guestName" value=guestName}}
-        {{/if}}
-
-        <button type="button" name="back">BACK</button>
-        <button type="button" disabled={{if isDisabledAttending true false}} name="next">NEXT</button>
-
-      </div>
-
-    {{#if willAttend}}
-      <!-- Your choice of entree question -->
-      <div class="entree question-box">
-        <label for="yourEntree">Your choice of entree:</label>
-        Chicken{{input type="radio" name="entree" value="Chicken"}}
-        Beef{{input type="radio" name="entree" value="Beef"}}
-        Vegetarian{{input type="radio" name="entree" value="Vegetarian"}}
-        <label for="yourDietary">Your dietary restrictions:</label>
-        {{input id="yourDietary"}}
-
-
+  {{#if validName}}
+    <!-- Will you attend question -->
+    <div class="attending question-box">
+      <label for="attending">Will you attend?</label>
+      Yes{{radio-button value=true checked=willAttend}}
+      No{{radio-button value=false checked=willAttend}}
+      <!-- If yes, above, show -->
+      {{#if willAttend}}
+        <label for="numOfPeople">Number of people in your party:</label>
+          1{{radio-button value=false checked=numPeople}}
+          2{{radio-button value=true checked=numPeople}}
+      {{/if}}
+      <!-- If two, above, show -->
       {{#if numPeople}}
-        <!-- Guest's choice of entree question -->
-        <label for="yourEntree">Guest's choice of entree:</label>
-        Chicken{{input type="radio" name="entree" value="Chicken"}}
-        Beef{{input type="radio" name="entree" value="Beef"}}
-        Vegetarian{{input type="radio" name="entree" value="Vegetarian"}}
-        <label for="guestDietary">Guest's dietary restrictions:</label>
-        {{input id="guestDietary"}}
-        <button type="button" name="back">BACK</button>
-        <button disabled={{isDisabledEntree}} type="button" name="next">NEXT</button>
+        <label for="guestName">Full name of your guest:</label>
+        {{input id="guestName" value=guestName}}
       {{/if}}
 
+      <button type="button" name="back">Back</button>
+      <button type="button" disabled={{if isDisabledAttending true false}} name="next">Next</button>
+
+    </div>
+
+      {{#if willAttend}}
+        <!-- Your choice of entree question -->
+        <div class="dietary question-box">
+          <label for="yourDietary">{{nameValue}}'s dietary restrictions:</label>
+          {{input id="yourDietary" placeholder="Leave blank if none"}}
+
+
+        {{#if numPeople}}
+          <!-- Guest's choice of entree question -->
+          <label for="guestDietary">{{guestName}}'s dietary restrictions:</label>
+          {{input id="guestDietary" placeholder="(ex. Vegetarian, etc...)"}}
+        {{/if}}
+
+        <button type="button" name="back">Back</button>
+        <button type="button" name="next">Next</button>
+        </div>
+      {{/if}}
+
+      <!-- Promise to dance question -->
+      <div class="dance question-box">
+        <label for="dance">I promise to dance if you play:</label>
+        {{input id="dance" value=danceValue}}
+        <button type="button" name="back">Back</button>
+      {{#if danceValueContent}}
+        <button type="button" name="partyOn">Party on!</button>
+      {{else}}
+        <button type="button" name="next">Next</button>
+      {{/if}}
+      </div>
+
+      <!-- Comments question -->
+      <div class="comments question-box">
+        <label for="comments">Comments:</label>
+        {{input id="comments"}}
+        <button type="button" name="back">Back</button>
+        <button type="button" name="submit">Submit</button>
       </div>
     {{/if}}
-
-    <!-- Comments questions -->
-    <div class="comments question-box">
-      <label for="comments">Comments:</label>
-      {{input id="comments"}}
-      <button type="button" name="back">BACK</button>
-      <button type="button" name="submit">SUBMIT</button>
-    </div>
 
 </div>
 

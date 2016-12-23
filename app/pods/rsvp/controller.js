@@ -13,6 +13,9 @@ export default Ember.Controller.extend({
   guestName: '',
   guestNameValid: Ember.computed.gte('guestName.length', 3),
 
+  danceValue: '',
+  danceValueContent: Ember.computed.gte('danceValue.length', 4),
+
   trueAttending1: Ember.computed.and('willAttend','numPeople', 'guestNameValid'),
 
   trueAttending2: Ember.computed.and('willAttend','notNumPeople'),
