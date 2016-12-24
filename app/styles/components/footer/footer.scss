@@ -1,0 +1,19 @@
+footer {
+  font-size: .82em;
+  letter-spacing: .5px;
+  position: fixed;
+  bottom: 0;
+  left: .5em;
+
+  .footer-content {
+    color: $lightgrey;
+
+    a {
+      color: $lightgrey;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

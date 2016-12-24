@@ -1,0 +1,40 @@
+.top-nav {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0,0,0,.07);
+  padding: .1em 2em;
+
+  .nav-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;;
+    align-items: center;
+  }
+
+  .nav-left, .nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .5px;
+
+    a {
+      color: $lightgrey;
+      transition: color .18s linear;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .nav-left {
+    font-size: 1.4em;
+    font-family: $rainbow;
+    position: relative;
+    top: .1em;
+  }
+
+  .nav-right a {
+    padding-left: 1.5em;
+  }
+}
