@@ -24,6 +24,7 @@ html {
 body {
 	font-family: $quick;
 	font-weight: 400;
+	position: relative;
 }
 
 .wrapper {
@@ -32,6 +33,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
+	@include playfair();
 	font-weight: 400;
 }
 

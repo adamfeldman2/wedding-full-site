@@ -1,6 +1,7 @@
 .rsvp {
   height: 100vh;
   background-image: linear-gradient(rgba(0,0,0,.47),rgba(0,0,0,.47)), url('../images/rsvp-background.jpg');
+  background-size: cover;
 }
 
 .rsvp-content {
@@ -20,7 +21,7 @@
   display: flex;
   width: 60%;
   padding: 2em;
-  border: 2px solid $black;
+  border: 9px double $black;
   background-color: transparentize($white,0.1);
   align-items: center;
   flex-direction: column;
@@ -34,10 +35,10 @@
     &:after {
       position: absolute;
       right: 50%;
-      bottom: .2rem;
+      bottom: .3rem;
       transform: translateX(50%);
       content: '';
-      border-bottom: 4px solid $accent;
+      border-bottom: 2px solid $accent;
       height: 10px;
       width: 100%;
     }
@@ -51,6 +52,8 @@
   // flex-direction: column;
 
   label {
+    @include playfair();
+
     &[for="fullName"] {
       display: block;
       margin-bottom: .4em;
@@ -92,7 +95,6 @@
   }
 
   input {
-    // font-size: .95em;
     padding: .32em .45em;
     border: 1px solid lighten($black, 50%);
     transition: all .18s linear;

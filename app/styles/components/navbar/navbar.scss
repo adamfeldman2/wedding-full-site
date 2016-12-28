@@ -13,7 +13,9 @@
   }
 
   .nav-items {
-    width: 40em;
+    font-size: 1.03em;
+    @include playfair();
+    width: 41.2em;
     height: 100%;
     margin: 0 auto;
     display: flex;

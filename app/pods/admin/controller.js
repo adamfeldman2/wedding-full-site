@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   adminUsername: '',
   adminPassword: '',
   adminUsernameTrue: Ember.computed.equal('adminUsername', 'user1'),
-  adminPasswordTrue: Ember.computed.equal('adminPassword', 'robot1990'),
+  adminPasswordTrue: Ember.computed.equal('adminPassword', 'robot1'),
   allowAccess: Ember.computed.and('adminUsernameTrue', 'adminPasswordTrue'),
 
   actions: {
@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
         Ember.$('.admin-sign-in').hide();
       } else {
         this.set('tryAgain', 'Nope, try again!');
-        Ember.$('.try-again').fadeIn('slow').delay(1500).fadeOut();
+        Ember.$('.try-again').fadeIn('slow').delay(1550).fadeOut();
       }
     }
   }

@@ -1,0 +1,88 @@
+.details {
+  // height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../images/hand-hold.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 10em 0;
+
+  .details-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+
+    h1 {
+      display: table;;
+      font-size: 3.7em;
+      margin: 0 auto 1em;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        right: 50%;
+        bottom: 0rem;
+        transform: translateX(50%);
+        content: '';
+        border-bottom: 2px solid $accent;
+        height: 10px;
+        width: 100%;
+      }
+    }
+  }
+
+  .info-wrapper {
+    display: flex;
+    margin-bottom: 2em;
+
+    .info-left, .info-right {
+      width: 50%;
+
+      h4 {
+        font-size: 1.6em;
+        margin-bottom: .5em;
+      }
+
+      p {
+        font-size: 1.13em;
+        font-weight: 300;
+        letter-spacing: .5px;
+        line-height: 1.45;
+      }
+    }
+
+    .info-left {
+      padding-right: 2em;
+
+      .nearby {
+        margin-top: 2em;
+      }
+    }
+
+    .info-right {
+      padding-left: 2em;
+      // position: relative;
+
+      a {
+        font-size: .97em;
+        display: inline-block;
+        letter-spacing: .5px;
+        text-decoration: underline;
+        color: $white;
+        position: relative;
+        top: 1.4em;
+        transition: all .21s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .map-wrapper {
+        margin-top: 3.5em;
+        width: 100%;
+        -webkit-filter: grayscale(.15);
+        filter: grayscale(.15);
+      }
+    }
+  }
+}

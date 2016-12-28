@@ -1,6 +1,7 @@
 //Variables
 @import 'variables/colors';
 @import 'variables/fonts';
+@import 'variables/mixins';
 
 // Setup
 @import 'setup/setup';
@@ -12,5 +13,6 @@
 // Pages
 @import 'pages/home';
 @import 'pages/couple';
+@import 'pages/details';
 @import 'pages/rsvp';
 @import 'pages/admin';
