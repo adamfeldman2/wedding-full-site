@@ -1,40 +1,36 @@
 .top-nav {
   position: fixed;
   width: 100%;
-  background-color: rgba(0,0,0,.07);
-  padding: .1em 2em;
+  background-color: $offwhite;
+  padding: 1em 0;
+  z-index: 10;
 
-  .nav-items {
+  div {
+    background-image: url(../images/zag.png);
+    background-repeat: repeat-x;
     width: 100%;
-    display: flex;
-    justify-content: space-between;;
-    align-items: center;
+    height: 25px;
   }
 
-  .nav-left, .nav-right {
+  .nav-items {
+    width: 40em;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: .5px;
+    background-color: $offwhite;
 
-    a {
-      color: $lightgrey;
+    li {
+      margin: 0 1.7em;
+
+      a {
+        color: $black;
+        padding: .06em 0;
+        white-space: nowrap;
+      }
     }
   }
-
-  .nav-left {
-    font-size: 1.4em;
-    font-family: $rainbow;
-    position: relative;
-    top: .1em;
-  }
-
-  .nav-right a {
-    margin-left: 1.5em;
-    padding-bottom: .1em;
-    border-bottom: 1px solid transparent;
-  }
-}
 
 /* Underline From Center */
 .hvr-underline-from-center {
@@ -50,11 +46,11 @@
   content: "";
   position: absolute;
   z-index: -1;
-  left: 50%;
+  left: 51%;
   right: 50%;
   bottom: 0;
-  background: $lightgrey;
-  height: 1px;
+  background: $accent;
+  height: 3px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
   -webkit-transition-duration: 0.29s;
@@ -65,4 +61,5 @@
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
+}
 }

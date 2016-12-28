@@ -18,9 +18,26 @@
     }
 
     span {
-      font-size: 2em;
-      font-weight: 200;
+      font-size: 2.2em;
+      font-weight: 300;
       margin-top: -1.3em;
+    }
+
+    .buttonToRSVP {
+      font-weight: 300;
+      letter-spacing: 1px;
+      background-color: transparent;
+      color: $white;
+      position: relative;
+      top: 3.8em;
+      border: 1px solid $accent;
+      border-radius: .15em;
+      padding: .65em 1.9em;
+      transition: all .23s linear;
+
+      &:hover {
+        background-color: $accent;
+      }
     }
   }
 }
