@@ -1,0 +1,35 @@
+<section class="admin">
+  <div class="adminSignIn">
+    {{input placeholder="Username"}}
+    {{input placeholder="Password"}}
+    {{input type="submit" value="Submit"}}
+  </div>
+  <div class="adminContent">
+    <h1>Secret Admin Page🕵🏻</h1>
+
+    <table>
+      <tr>
+        <th>User's Name</th>
+        <th>Will Attend</th>
+        <th>Ppl in Party</th>
+        <th>Guest's Name</th>
+        <th>User Diet Restrict.</th>
+        <th>Guest Diet Restrict.</th>
+        <th>Song Request</th>
+        <th>Comments</th>
+      </tr>
+      {{#each model as |rsvp|}}
+      <tr class=" tableRows">
+        <td>{{rsvp.userName}}</td>
+        <td>{{if rsvp.willAttend 'Yes' 'No'}}</td>
+        <td>{{if rsvp.numPeople '2' '1'}}</td>
+        <td>{{rsvp.guestName}}</td>
+        <td>{{rsvp.userDietary}}</td>
+        <td>{{rsvp.guestDietary}}</td>
+        <td>{{rsvp.dance}}</td>
+        <td>{{rsvp.comments}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </div> <!-- /.adminContent -->
+</section>

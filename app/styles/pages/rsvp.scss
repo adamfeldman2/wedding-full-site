@@ -1,12 +1,12 @@
 .rsvp {
-  background-image: linear-gradient(rgba(0,0,0,.47),rgba(0,0,0,.47)), url(../images/rsvp-background.jpg);
   height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,.47),rgba(0,0,0,.47)), url('../images/rsvp-background.jpg');
 }
 
 .rsvp-content {
+  display: flex;
   width: 100%;
   height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -15,17 +15,17 @@
 
 .rsvp-box {
   font-size: 1.3em;
-  display: flex;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  display: flex;
   width: 60%;
+  padding: 2em;
   border: 2px solid $black;
+  background-color: transparentize($white,0.1);
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: transparentize($white,0.1);
-  padding: 2em;
+  transform: translateY(-50%);
 
   h1 {
     font-size: 2.3em;
@@ -33,11 +33,11 @@
 
     &:after {
       position: absolute;
-      bottom: .1rem;
       right: 50%;
+      bottom: .2rem;
       transform: translateX(50%);
       content: '';
-      border-bottom: 7px solid $accent;
+      border-bottom: 4px solid $accent;
       height: 10px;
       width: 100%;
     }
@@ -67,36 +67,36 @@
 
     &[for="guestName"] {
       display: block;
-      margin: 1.5em 0 .5em 0;
+      margin: 1.5em 0 .5em;
     }
 
     &[for="userDietary"] {
       display: block;
-      margin: .6em 0 .5em 0;
+      margin: .6em 0 .5em;
     }
 
     &[for="guestDietary"] {
       display: block;
-      margin: 1.5em 0 .5em 0;
+      margin: 1.5em 0 .5em;
     }
 
     &[for="dance"] {
       display: block;
-      margin: .6em 0 .5em 0;
+      margin: .6em 0 .5em;
     }
 
     &[for="comments"] {
       display: block;
-      margin: .6em 0 .5em 0;
+      margin: .6em 0 .5em;
     }
   }
 
   input {
     // font-size: .95em;
-    outline: transparent;
-    border: 1px solid lighten($black, 50%);
     padding: .32em .45em;
+    border: 1px solid lighten($black, 50%);
     transition: all .18s linear;
+    outline: transparent;
 
     &:focus {
       border: 1px solid $black;
@@ -113,10 +113,10 @@
 
   textarea {
     width: 100%;
+    padding: .32em .45em;
+    border: 1px solid lighten($black, 50%);
     outline: transparent;
     transition: all .18s linear;
-    border: 1px solid lighten($black, 50%);
-    padding: .32em .45em;
 
     &:focus {
       border: 1px solid $black;
@@ -125,11 +125,11 @@
 
   button[name="next"], button[name="submit"] {
     font-size: .9em;
-    background-color: $accent;
-    border: 1px solid transparent;
-    color: $white;
     padding: .42em 1.15em;
+    border: 1px solid transparent;
     margin-left: 2em;
+    background-color: $accent;
+    color: $white;
     outline: transparent;
     transition: all .17s linear;
 
@@ -148,11 +148,11 @@
 
   button[name="back"] {
     font-size: .9em;
-    background-color: $white;
-    border: 2px solid $accent;
-    color: $black;
     padding: .42em 1.15em;
+    border: 2px solid $accent;
     margin-right: 2em;
+    background-color: $white;
+    color: $black;
     outline: transparent;
     transition: all .17s linear;
 
@@ -164,16 +164,16 @@
   .buttonsWrapper {
     display: block;
     display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 2.3em;
+    align-items: center;
+    justify-content: center;
   }
 
   .soloButtonWrapper {
-    width: 100%;
     display: flex;
-    justify-content: center;
+    width: 100%;
     margin-top: 2.3em;
+    justify-content: center;
   }
 
   .soloButton {
@@ -185,5 +185,10 @@
   .radioButtons {
     display: block;
     margin-top: .35em;
+  }
+
+  .submit-message {
+    margin: 1.2em 0;
+    background-color: pink;
   }
 }

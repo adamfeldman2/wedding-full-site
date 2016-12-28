@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
 
   commentsValue: '',
 
-  attendingSubmitMessage: 'Submission received! We\'ll see you on August 27th! 🎉',
+  attendingSubmitMessage: 'Your submission has been received! We\'ll see you on August 27th! 🎉',
 
   notAttendingSubmitMessage: 'It won\'t be the same without you, but we understand. Take care!',
 
@@ -104,9 +104,11 @@ export default Ember.Controller.extend({
         comments:comments
       });
 
-      newRSVP.save();
-      Ember.$('.comments').hide();
-      this.set('submitMessage', true);
+      newRSVP.save().then((response) => {
+        console.log('RSVP submission has been sent!');
+        Ember.$('.comments').hide();
+        this.set('submitMessage', true);
+      });
     }
   }
 });
