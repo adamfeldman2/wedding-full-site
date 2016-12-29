@@ -12,21 +12,21 @@
     color: $white;
 
     h1 {
-      display: table;;
+      // display: table;
       font-size: 3.7em;
-      margin: 0 auto 1em;
+      margin: 0 auto 1.4em;
       position: relative;
 
-      &:after {
-        position: absolute;
-        right: 50%;
-        bottom: 0rem;
-        transform: translateX(50%);
-        content: '';
-        border-bottom: 2px solid $accent;
-        height: 10px;
-        width: 100%;
-      }
+      // &:after {
+      //   position: absolute;
+      //   right: 50%;
+      //   bottom: 0rem;
+      //   transform: translateX(50%);
+      //   content: '';
+      //   border-bottom: 2px solid $accent;
+      //   height: 10px;
+      //   width: 100%;
+      // }
     }
   }
 
@@ -51,7 +51,7 @@
     }
 
     .info-left {
-      padding-right: 2em;
+      padding-right: 3.8em;
 
       .nearby {
         margin-top: 2em;
@@ -59,8 +59,8 @@
     }
 
     .info-right {
-      padding-left: 2em;
-      // position: relative;
+      padding-left: 3.8em;
+      // border-left: 2px solid $accent;
 
       a {
         font-size: .97em;
@@ -79,9 +79,12 @@
 
       .map-wrapper {
         margin-top: 3.5em;
-        width: 100%;
         -webkit-filter: grayscale(.15);
         filter: grayscale(.15);
+
+        img {
+          width: 86%;
+        }
       }
     }
   }
