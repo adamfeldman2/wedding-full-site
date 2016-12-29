@@ -24,16 +24,20 @@
     background-color: $offwhite;
 
     li {
-      margin: 0 1.7em;
+      // margin: 0 1.7em;
 
       a {
         color: $black;
-        padding: .06em 0;
+        padding: 1em 1.5em;
         white-space: nowrap;
         transition: color .3s ;
 
         &:hover {
           color: $accent;
+        }
+
+        &:focus {
+          outline: transparent;
         }
       }
     }

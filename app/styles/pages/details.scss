@@ -9,24 +9,26 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: $white;
+    color: $black;
+    background-color: transparentize($white,0.1);
+    border: 9px double $black;
+    padding: 4em 5em;
 
     h1 {
       // display: table;
       font-size: 3.7em;
       margin: 0 auto 1.4em;
       position: relative;
+    }
 
-      // &:after {
-      //   position: absolute;
-      //   right: 50%;
-      //   bottom: 0rem;
-      //   transform: translateX(50%);
-      //   content: '';
-      //   border-bottom: 2px solid $accent;
-      //   height: 10px;
-      //   width: 100%;
-      // }
+    .wedding-countdown-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4em;
+
+      h2 {
+        text-align: center;
+      }
     }
   }
 
@@ -60,21 +62,30 @@
 
     .info-right {
       padding-left: 3.8em;
-      // border-left: 2px solid $accent;
 
       a {
         font-size: .97em;
+        width: 100%;
+        text-align: center;
         display: inline-block;
         letter-spacing: .5px;
-        text-decoration: underline;
+        // text-decoration: underline;
         color: $white;
         position: relative;
         top: 1.4em;
-        transition: all .21s;
 
-        &:hover {
-          transform: scale(1.1);
+        &:hover > span {
+          position: relative;
+          right: 10.5em;
         }
+      }
+
+      span {
+        font-size: 1.3em;
+        position: relative;
+        top: .11em;
+        right: 10em;
+        transition: all .4s;
       }
 
       .map-wrapper {
