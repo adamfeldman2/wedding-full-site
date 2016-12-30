@@ -34,7 +34,7 @@ export default Ember.Component.extend({
       return `${days} Days, ${hours} Hours, ${minutes} Minutes, and ${seconds} Seconds`;
     } else {
       // this.set('countdownGreeting', 'Happily Ever After:');
-      return `Bryan and Ali have been living happily ever after for ${daysPassed} Days, ${hoursPassed} Hours, ${minutesPassed} Minutes, and ${secondsPassed} Seconds.`;
+      return `Living happily ever after for ${daysPassed} Days, ${hoursPassed} Hours, ${minutesPassed} Minutes, and ${secondsPassed} Seconds.`;
     }
 
 

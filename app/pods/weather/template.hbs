@@ -1,0 +1,8 @@
+<h1>Weather</h1>
+<ul>
+  {{#each model as |weatherData|}}
+    <li>{{weatherData.location.city}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

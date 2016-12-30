@@ -26,6 +26,15 @@
       justify-content: center;
       margin-bottom: 4em;
 
+      countdown-wrapper {
+        border: 9px double $black;
+        padding: 1.4em 2.5em;
+
+        h2 {
+          margin-bottom: .2em;
+        }
+      }
+
       h2 {
         text-align: center;
       }
@@ -41,22 +50,54 @@
 
       h4 {
         font-size: 1.6em;
-        margin-bottom: .5em;
+        margin-bottom: .3em;
       }
 
       p {
         font-size: 1.13em;
         font-weight: 300;
         letter-spacing: .5px;
-        line-height: 1.45;
+        line-height: 1.4;
       }
     }
 
     .info-left {
+      letter-spacing: .4px;
       padding-right: 3.8em;
 
+      .dress-code {
+        margin-top: 1.6em;
+      }
+
       .nearby {
-        margin-top: 2em;
+        margin: 2.1em 0 1.2em;
+      }
+
+      .hotels-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .hotel-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 2.8em;
+
+          .hotel-directions {
+            font-size: .88em;
+            margin-top: .8em;
+            color: $black;
+            text-decoration: underline;
+            transition: .09s linear;
+
+            &:hover {
+              color: $accent;
+            }
+          }
+        }
       }
     }
 
@@ -70,7 +111,7 @@
         display: inline-block;
         letter-spacing: .5px;
         // text-decoration: underline;
-        color: $white;
+        color: $black;
         position: relative;
         top: 1.4em;
 
@@ -94,7 +135,7 @@
         filter: grayscale(.15);
 
         img {
-          width: 86%;
+          width: 100%;
         }
       }
     }

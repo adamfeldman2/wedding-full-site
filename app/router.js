@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('rsvp');
   this.route('contact');
   this.route('admin');
+  this.route('weather');
 });
 
 export default Router;
