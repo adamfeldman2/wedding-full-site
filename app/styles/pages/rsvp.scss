@@ -1,7 +1,9 @@
 .rsvp {
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,.47),rgba(0,0,0,.47)), url('../images/rsvp-background.jpg');
+  background-image: linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.02)), url(../images/hand-hold.jpg);
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .rsvp-content {
@@ -21,15 +23,15 @@
   display: flex;
   width: 60%;
   padding: 2em;
-  border: 9px double $black;
-  background-color: transparentize($white,0.1);
+  border: 10px double $black;
+  background-color: transparentize($white,0.08);
   align-items: center;
   flex-direction: column;
   justify-content: center;
   transform: translateY(-50%);
 
   h1 {
-    font-size: 2.3em;
+    font-size: 2.5em;
     position: relative;
     margin-bottom: .4em;
   }
@@ -42,7 +44,7 @@
   // flex-direction: column;
 
   label {
-    @include playfair();
+
 
     &[for="fullName"] {
       display: block;
@@ -91,7 +93,7 @@
     outline: transparent;
 
     &:focus {
-      border: 1px solid $black;
+      border: 1px solid $accent;
     }
 
     &[type="text"] {

@@ -12,7 +12,6 @@ export default Ember.Component.extend({
   weddingDate: 'August 27 2017 20:00:00 EST-0500',
 
   timeRemaining: Ember.computed('weddingDate', 'countdownGreeting', function() {
-
   // Variables used for time remaining //
     const remaining = Date.parse(this.get('weddingDate')) - Date.parse(this.get('today'));
     const seconds = Math.floor( (remaining/1000) % 60 );
@@ -36,8 +35,6 @@ export default Ember.Component.extend({
       // this.set('countdownGreeting', 'Happily Ever After:');
       return `Living happily ever after for ${daysPassed} Days, ${hoursPassed} Hours, ${minutesPassed} Minutes, and ${secondsPassed} Seconds.`;
     }
-
-
   }),
 
   actions: {

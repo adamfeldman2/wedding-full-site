@@ -22,19 +22,27 @@ html {
 }
 
 body {
-	font-family: $quick;
+	font-family: $oxygen;
+	letter-spacing: .5px;
 	font-weight: 400;
 	position: relative;
 }
 
 .wrapper {
-	max-width: 970px;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
 h1,h2,h3,h4,h5,h6 {
-	@include playfair();
-	font-weight: 400;
+	font-family: $libre;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background-color: #222;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: rgba(255,255,255,0.45) 0px 3px 3px;
 }
 
 ::selection {
@@ -42,4 +50,48 @@ h1,h2,h3,h4,h5,h6 {
 }
 ::-moz-selection {
   background: transparentize($accent,.5); /* Gecko Browsers */
+}
+
+
+// Animations //
+@keyframes fadeIn {
+  0%, 5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeInFast {
+  0%, 5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInFast {
+  animation: fadeInFast 1s;
+}
+
+@keyframes fadeInSlow {
+  0%, 30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInSlow {
+  animation: fadeInSlow 5s;
 }
