@@ -4,6 +4,7 @@
   padding: 1em 0;
   z-index: 10;
   background-color: $offwhite;
+  border-bottom: 1px solid transparentize($black, 0.7);
 
   .nav-items {
     font-size: 1.08em;
