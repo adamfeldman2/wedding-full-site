@@ -50,7 +50,7 @@
 
 // Greater than 790px //
 @media (min-width: 791px) {
-  button {
+  .hamburger-icon, .x-icon {
     display: none;
   }
 }

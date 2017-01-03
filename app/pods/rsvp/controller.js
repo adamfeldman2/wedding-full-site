@@ -5,6 +5,18 @@ export default Ember.Controller.extend({
   validName: Ember.computed.gte('nameValue.length', 3),
   isDisabledName: Ember.computed.not('validName'),
 
+  countUp: 0,
+
+  init() {
+    setInterval(() => {
+      console.log(this.incrementProperty('countUp'));
+    },1000);
+  },
+
+  nameValueChanged: Ember.observer('validName',function() {
+    console.log(`User's name is valid: ${this.get('validName')}`);
+  }),
+
   willAttend: null,
   notWillAttend: Ember.computed.equal('willAttend', false),
   numPeople: null,
