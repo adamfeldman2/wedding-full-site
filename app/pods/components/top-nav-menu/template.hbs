@@ -1,0 +1,27 @@
+<nav class="top-nav">
+  <div class="wrapper">
+
+    <!-- hamburger menu icon -->
+    {{#unless showHamburger}}
+      <button class="hamburger-icon" {{action 'hamburgerMenu'}}>&#9776;</button>
+    {{/unless}}
+
+    <!-- display X and Nav Menu -->
+    {{#unless showX}}
+      <button class="x-icon" {{action 'hamburgerMenuClose'}}>{{fa-icon 'times'}}</button>
+    {{/unless}}
+
+    <ul class="nav-items">
+      <li>{{link-to 'Home' 'index' class='hvr-underline-from-center'}}</li>
+      <li>{{link-to 'The Couple' 'couple' class='hvr-underline-from-center'}}</li>
+      <li>{{link-to 'Wedding Details' 'details' class='hvr-underline-from-center'}}</li>
+      <li>{{link-to 'RSVP' 'rsvp' class='hvr-underline-from-center'}}</li>
+      <li>{{link-to 'Contact Us' 'contact' class='hvr-underline-from-center'}}</li>
+    </ul>
+
+
+  </div>
+</nav>
+
+
+{{yield}}
