@@ -2,16 +2,16 @@
   <div class="wrapper">
 
     <!-- hamburger menu icon -->
-    {{#unless showHamburger}}
-      <button class="hamburger-icon" {{action 'hamburgerMenu'}}>&#9776;</button>
-    {{/unless}}
+    {{#if showHamburger}}
+      <button class="hamburger-icon" {{action 'toggleMenu'}}>&#9776;</button>
+    {{/if}}
 
     <!-- display X and Nav Menu -->
-    {{#unless showX}}
-      <button class="x-icon" {{action 'hamburgerMenuClose'}}>{{fa-icon 'times'}}</button>
+    {{#unless showHamburger}}
+      <button class="x-icon" {{action 'toggleMenu'}}>{{fa-icon 'times'}}</button>
     {{/unless}}
-    
-    <ul class="nav-items">
+
+    <ul class="nav-items {{if showHamburger 'menu-hidden'}}">
       <li>{{link-to 'Home' 'index' class='hvr-underline-from-center'}}</li>
       <li>{{link-to 'The Couple' 'couple' class='hvr-underline-from-center'}}</li>
       <li>{{link-to 'Wedding Details' 'details' class='hvr-underline-from-center'}}</li>

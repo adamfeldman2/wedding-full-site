@@ -82,11 +82,14 @@
 
     .nav-items {
       width: 100%;
-      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 1.4em 0 1.4em;
+
+      &.menu-hidden {
+        display: none;
+      }
 
       li {
         padding: .6em 0;
