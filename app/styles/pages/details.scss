@@ -35,7 +35,7 @@
       align-items: center;
 
       span:first-child {
-        font-size: .8em;
+        font-size: .87em;
         display: block;
         // margin-bottom: -.6em;
       }
@@ -53,7 +53,7 @@
         img {
           width: 1.6em;
           position: relative;
-          top: .2em;
+          top: 0em;
         }
       }
     }
@@ -75,6 +75,30 @@
       h2 {
         text-align: center;
       }
+
+      .countdown-cell-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1em;
+
+        .countdown-cell {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+
+          .countdown-number {
+            font-size: 1.5em;
+          }
+
+          .countdown-text {
+            font-size: .8em;
+          }
+        }
+      }
+
     }
   }
 
