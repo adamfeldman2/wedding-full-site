@@ -3,6 +3,15 @@
     <div class="details-content fadeInFast">
       <h1>Wedding Details</h1>
 
+      <div class="bracebridge-weather">
+          <span>{{model.location.city}}</span>
+          <div class="temp-icon-wrapper">
+            <span>{{model.current_observation.temp_c}}&#8451;</span>
+            <img src="{{model.current_observation.icon_url}}" alt="">
+          </div>
+
+      </div>
+
       <div class="wedding-countdown-wrapper">
         {{countdown-timer}}
       </div>

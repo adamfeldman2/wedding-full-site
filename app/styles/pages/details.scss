@@ -14,6 +14,7 @@
     border: 10px double $black;
     padding: 4em 5em;
     background-color: transparentize($white,0.08);
+    position: relative;
 
 
 
@@ -22,6 +23,39 @@
       font-size: 3.7em;
       margin: 0 auto 1.4em;
       position: relative;
+    }
+
+    .bracebridge-weather {
+      position: absolute;
+      left: .3em;
+      top: .3em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span:first-child {
+        font-size: .8em;
+        display: block;
+        // margin-bottom: -.6em;
+      }
+
+      .temp-icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span:first-child {
+          font-size: .8em;
+          margin-right: .3em;
+        }
+
+        img {
+          width: 1.6em;
+          position: relative;
+          top: .2em;
+        }
+      }
     }
 
     .wedding-countdown-wrapper {
