@@ -46,6 +46,8 @@ export default Ember.Controller.extend({
 
   notAttendingSubmitMessage: 'It won\'t be the same without you, but we understand. Take care!',
 
+  commentsBackButton: '',
+
 
   actions: {
     backToNameQuestion() {
@@ -63,12 +65,23 @@ export default Ember.Controller.extend({
     backToAttendingQuestion() {
       Ember.$('.dietary').hide();
       Ember.$('.attending').show();
+      Ember.$('.comments').hide();
     },
 
     displayDietaryQuestion() {
-      Ember.$('.attending').hide();
-      this.set('displayDietaryQuestion', true);
-      Ember.$('.dietary').show();
+
+      if(this.get('willAttend') === false) {
+        Ember.$('.attending').hide();
+        this.set('displayCommentsQuestion', true);
+        Ember.$('.comments').show();
+        this.set('commentsBackButton','backToAttendingQuestion');
+      } else {
+        Ember.$('.attending').hide();
+        this.set('displayDietaryQuestion', true);
+        Ember.$('.dietary').show();
+        this.set('commentsBackButton','backToDanceQuestion');
+      }
+
     },
 
     backToDietaryQuestion() {

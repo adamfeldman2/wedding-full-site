@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   countdownGreeting: 'Wedding Countdown',
 
-  weddingDate: 'August 27 2016 20:00:00 EST-0500',
+  weddingDate: 'August 27 2017 20:00:00 EST-0500',
   timeElapsed: 0,
 
   timeRemaining: Ember.computed('weddingDate', 'countdownGreeting', 'timeElapsed',  function() {
@@ -31,7 +31,7 @@ export default Ember.Component.extend({
   // Return either time remaining or time passed //
     if (days >= 0) {
       // this.set('countdownGreeting', 'Wedding Countdown:');
-      const countdown = `<span class="countdown-text">Days</span> <span class="countdown-number">${days}</span> <span class="countdown-text">Hours</span> <span class="countdown-number">${hours}</span> <span class="countdown-text">Minutes</span> <span class="countdown-number">${minutes}</span> <span class="countdown-text">Seconds</span> <span class="countdown-number">${seconds}</span>`;
+      const countdown = `<div class="countdown-wrapper"><div class="countdown-cell>"<span class="countdown-text">Days</span> <span class="countdown-number">${days}</span></div> <div class="countdown-cell><span class="countdown-text">Hours</span> <span class="countdown-number">${hours}</span></div> <div class="countdown-cell><span class="countdown-text">Minutes</span> <span class="countdown-number">${minutes}</span></div> <div class="countdown-cell><span class="countdown-text">Seconds</span> <span class="countdown-number">${seconds}</span></div></div>`;
       return new Ember.String.htmlSafe(countdown);
 
     } else {
