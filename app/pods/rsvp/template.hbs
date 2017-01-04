@@ -19,16 +19,20 @@
           <div class="attending question-box">
             <label for="attending">Will you attend?</label>
             <div class="radioButtons">
-              Yes {{radio-button value=true checked=willAttend}}
-              No {{radio-button value=false checked=willAttend}}
+              <label for="yes">Yes</label>
+                {{radio-button value=true id="yes" checked=willAttend}}
+              <label for="no">No</label>
+                {{radio-button value=false id="no" checked=willAttend}}
             </div>
 
             <!-- If yes, above, show -->
             {{#if willAttend}}
             <label for="numOfPeople">Number of people in your party:</label>
             <div class="radioButtons">
-              1 {{radio-button value=false checked=numPeople}}
-              2 {{radio-button value=true checked=numPeople}}
+              <label for="one">1</label>
+                {{radio-button value=false id="one" checked=numPeople}}
+              <label for="two">2</label>
+                {{radio-button value=true id="two" checked=numPeople}}
             </div>
 
             {{/if}}
