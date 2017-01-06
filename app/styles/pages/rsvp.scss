@@ -1,8 +1,8 @@
 .rsvp {
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.02)), url(../images/hand-hold.jpg);
+  background-image: linear-gradient(rgba(0,0,0,.06),rgba(0,0,0,.06)), url(../images/image4.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
 }
 
@@ -136,7 +136,7 @@
     }
 
     &:hover {
-      background-color: lighten($accent, 3.5%);
+      background-color: lighten($accent, 3.1%);
     }
   }
 

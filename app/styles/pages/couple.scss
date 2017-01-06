@@ -1,7 +1,7 @@
 .couple {
-  background-image: linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.02)), url(../images/hand-hold.jpg);
+  background-image: linear-gradient(rgba(0,0,0,.06),rgba(0,0,0,.06)), url(../images/image4.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
   padding: 10em 0;
 }
@@ -23,28 +23,28 @@
 }
 
 .about-couple {
-  margin-top: 4em;
+  margin-top: .8em;
 
-  h4 {
-    font-size: 1.08em;
-    margin-bottom: .7em;
-  }
+  // h4 {
+  //   font-size: 1.08em;
+  //   margin-bottom: .7em;
+  // }
 
   p {
     float: left;
     line-height: 1.6;
 
-    img {
-      margin: 0 0 1.5em 1.5em;
-      float: right;
-      // border: 2px solid $lightgrey;
-      display: none;
-    }
+    // img {
+    //   margin: 0 0 1.5em 1.5em;
+    //   float: right;
+    //   // border: 2px solid $lightgrey;
+    //   display: none;
+    // }
   }
 }
 
 .gallery-wrapper {
-  margin-top: 4em;
+  margin-top: 5em;
 
   .thumbnails {
     display: flex;
@@ -53,7 +53,7 @@
 
 
     .thumbnail-wrapper {
-      width: 7%;
+      width: 7.8%;
       margin-right: .5em;
 
       img {
@@ -74,7 +74,7 @@
 
   .gallery-preview {
     display: flex;
-    margin-top: 3em;
+    margin-top: 2em;
     justify-content: center;
 
     .preview-wrapper {
@@ -90,7 +90,7 @@
 
 .questionnaire-wrapper {
   display: flex;
-  margin-top: 7em;
+  margin-top: 5.5em;
 
   h4 {
     font-size: 1.09em;

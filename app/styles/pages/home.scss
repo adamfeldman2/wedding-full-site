@@ -1,8 +1,8 @@
 .home {
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.02)), url(../images/hand-hold.jpg);
+  background-image: linear-gradient(rgba(0,0,0,.06),rgba(0,0,0,.06)), url(../images/image4.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   color: $white;
 
   .home-content {
@@ -18,9 +18,7 @@
       position: relative;
       color: $white;
       text-transform: capitalize;
-      text-shadow: 0px 1px 1px $black;
-      // text-shadow: none;
-
+      text-shadow: 0px 1px 3px $black;
     }
 
     span {
@@ -31,17 +29,18 @@
 
     .buttonToRSVP {
       font-weight: 300;
-      background-color: transparent;
+      background-color: $accent;
       color: $white;
       position: relative;
-      top: 7em;
+      top: 5em;
       border: 1px solid $accent;
       border-radius: .15em;
       padding: .65em 1.9em;
-      transition: all .23s linear;
+      transition: all .16s linear;
 
       &:hover {
-        background-color: $accent;
+        background-color: lighten($accent,3.1%);
+        border: 1px solid lighten($accent,3.1%);
       }
     }
   }
