@@ -3,8 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'countdown-wrapper',
 
-  // classNames: ['countdown-container'],
-
   countdownGreeting: 'Wedding Countdown',
 
   weddingDate: 'August 27 2017 20:00:00 EST-0500',
@@ -45,15 +43,6 @@ export default Ember.Component.extend({
     setInterval(() => {
       this.incrementProperty('timeElapsed');
     }, 1000);
-  }),
-
-
-  actions: {
-    alertTest() {
-      console.log('This works!');
-      this.toggleProperty('buttonClicked');
-    }
-  }
-
+  })
 
 });
