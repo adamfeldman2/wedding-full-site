@@ -72,3 +72,18 @@
     }
   }
 }
+
+// media queries //
+@media (max-width: 800px) {
+  .contact-content {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}

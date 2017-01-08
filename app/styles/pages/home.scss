@@ -21,7 +21,7 @@
       text-shadow: 0px 1px 3px $black;
     }
 
-    span {
+    .wedding-date {
       font-size: 2.5em;
       margin-top: -.45em;
       text-shadow: 0px 1px 1px $black;
@@ -41,6 +41,58 @@
       &:hover {
         background-color: lighten($accent,3.1%);
         border: 1px solid lighten($accent,3.1%);
+      }
+    }
+  }
+
+  // media queries //
+  @media (max-width: 1070px) {
+    .home-content {
+      h1 {
+        font-size: 13.8vw;
+      }
+
+      .wedding-date {
+        font-size: 4.3vw;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .home-content {
+      h1 {
+      }
+
+      .wedding-date {
+        margin-top: 1px;
+      }
+
+      .buttonToRSVP {
+        font-size: .9em;
+        position: relative;
+        top: 5em;
+        border: 1px solid $accent;
+        border-radius: .15em;
+        padding: .65em 1.9em;
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    .home-content {
+      h1 {
+        font-size: 5em;
+        text-align: center;
+      }
+
+      .line-break {
+        display: block;
+        margin-bottom: -.1em;
+      }
+
+      .wedding-date {
+        font-size: 1.8em;
+        margin-top: .4em;
       }
     }
   }

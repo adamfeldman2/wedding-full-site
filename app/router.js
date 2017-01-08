@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('contact');
   this.route('admin');
   this.route('weather');
+  this.route('playground');
 });
 
 export default Router;

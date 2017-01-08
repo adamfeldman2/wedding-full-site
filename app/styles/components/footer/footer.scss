@@ -6,7 +6,6 @@ footer {
   left: 1em;
   width: 100%;
   display: flex;
-  justify-content: flex-start;;
   align-items: flex-end;
 
 
@@ -30,5 +29,11 @@ footer {
   img {
     width: 9em;
     display: none;
+  }
+
+  // media queries //
+  @media (max-width: 700px) {  
+    justify-content: center;
+
   }
 }
