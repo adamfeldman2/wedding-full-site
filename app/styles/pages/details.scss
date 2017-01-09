@@ -98,7 +98,6 @@
           }
         }
       }
-
     }
   }
 
@@ -219,6 +218,40 @@
   }
 
   // media queries //
+  @media (max-width: 970px) {
+    .info-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .info-right {
+        padding: 0 0 3.2em;
+        width: 100%;
+        text-align: center;
+        order: 1;
+
+        .map-wrapper {
+          display: none;
+        }
+      }
+
+      .info-left {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        order: 2;
+      }
+    }
+  }
+
+  @media (max-width: 885px) {
+    .details-content {
+      h1 {
+        font-size: 6.4vw;
+      }
+    }
+  }
+
   @media (max-width: 800px) {
     .details-content {
       padding-left: 2em;
@@ -226,10 +259,69 @@
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     .details-content {
-      padding-left: 1em;
-      padding-right: 1em;
+      h1 {
+        font-size: 2.6em;
+        text-align: center;
+      }
+
+      .bracebridge-weather {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .details-content {
+        padding-left: 1em;
+        padding-right: 1em;
+
+      .wedding-countdown-wrapper {
+        justify-content: center;
+        margin-top: 1em;
+        margin-bottom: 4.5em;
+
+        countdown-wrapper {
+          border: none;
+          padding: 0;
+        }
+
+        h2 {
+          font-size: 1.4em;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 426px) {
+    .details-content{
+      .info-wrapper {
+        h4 {
+          font-size: 1.2em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .dress-code {
+          margin-top: 2.6em;
+        }
+
+        .nearby {
+          margin: 2.9em 0 1.2em;
+        }
+
+        .info-right {
+          padding: 0 0 4.7em;
+        }
+      }
+    }
+
+    .hide-nearby {
+      display: none;
     }
   }
 }

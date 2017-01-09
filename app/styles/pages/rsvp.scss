@@ -91,6 +91,7 @@
     border: 1px solid lighten($black, 50%);
     transition: all .18s linear;
     outline: transparent;
+    margin-right: .7em;
 
     &:focus {
       border: 1px solid $accent;
@@ -184,5 +185,35 @@
   .submit-message {
     margin: 1.2em 0;
     background-color: pink;
+  }
+}
+
+// media queries //
+@media (max-width: 950px) {
+  .rsvp-box {
+    width: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .rsvp-box {
+    width: 75%;
+  }
+}
+
+@media (max-width: 850px) {
+  .rsvp-box {
+    width: 85%;
+  }
+
+  .question-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      text-align: center;
+    }
   }
 }
