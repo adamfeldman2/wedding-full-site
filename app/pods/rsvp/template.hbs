@@ -19,9 +19,9 @@
           <div class="attending question-box">
             <label for="attending">Will you attend?</label>
             <div class="radioButtons">
-              <label for="yes">Yes</label>
+              <label class="radio" for="yes">Yes {{fa-icon 'circle-thin'}}</label>
                 {{radio-button value=true id="yes" checked=willAttend}}
-              <label for="no">No</label>
+              <label class="radio" for="no">No {{fa-icon 'circle-thin'}}</label>
                 {{radio-button value=false id="no" checked=willAttend}}
             </div>
 
@@ -29,9 +29,9 @@
             {{#if willAttend}}
             <label for="numOfPeople">Number of people in your party:</label>
             <div class="radioButtons">
-              <label for="one">1</label>
+              <label class="radio" for="one">1 {{fa-icon 'circle-thin'}}</label>
                 {{radio-button value=false id="one" checked=numPeople}}
-              <label for="two">2</label>
+              <label class="radio" for="two">2 {{fa-icon 'circle-thin'}}</label>
                 {{radio-button value=true id="two" checked=numPeople}}
             </div>
 

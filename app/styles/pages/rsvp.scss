@@ -44,8 +44,6 @@
   // flex-direction: column;
 
   label {
-
-
     &[for="fullName"] {
       display: block;
       margin-bottom: .4em;
@@ -104,6 +102,14 @@
     &#dance {
       width: 100%;
     }
+
+    &[type='radio'] {
+      display: none;
+    }
+  }
+
+  .radio {
+    color: red;
   }
 
   textarea {
