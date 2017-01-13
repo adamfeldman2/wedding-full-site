@@ -23,6 +23,23 @@
         width: 10px;
         margin: 0;
         animation: stretch 1.2s;
+        position: relative;
+
+        &:hover {
+          background-color: $black;
+
+          &:after {
+            content: '2.4';
+            position: absolute;
+            top: -30px;
+            right: 50%;
+            transform: translateX(50%);
+            padding: .2em .5em;
+            background-color: $black;
+            color: $white;
+            z-index: 999;
+          }
+        }
       }
 
       .avg-score-bar {
