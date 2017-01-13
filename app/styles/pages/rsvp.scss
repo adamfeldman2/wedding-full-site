@@ -7,13 +7,13 @@
 }
 
 .rsvp-content {
+  position: relative;
   display: flex;
   width: 100%;
   height: 100vh;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
 }
 
 .rsvp-box {
@@ -85,9 +85,9 @@
   input {
     padding: .32em .45em;
     border: 1px solid lighten($black, 50%);
+    margin-right: .7em;
     transition: all .18s linear;
     outline: transparent;
-    margin-right: .7em;
 
     &:focus {
       border: 1px solid $accent;
@@ -114,10 +114,10 @@
 
     &[type='radio']:checked + label:after {
       content: "\f004";
+      font-size: .8em;
+      margin-left: .3em;
       color: $accent;
       font-family: FontAwesome;
-      margin-left: .3em;
-      font-size: .8em;
     }
   }
 
@@ -156,7 +156,7 @@
     }
 
     &:hover {
-      background-color: lighten($accent, 3.1%);
+      background-color: lighten($accent, 6%);
     }
   }
 
@@ -208,12 +208,18 @@
 }
 
 .return-home {
-  color: $accent;
-  margin-top: 2.5em;
-  transition: color .23s;
+  font-size: .9em;
+  padding: .42em 1.15em;
+  border: 2px solid $accent;
+  margin-top: 2em;
+  background-color: $accent;
+  color: $white;
+  outline: transparent;
+  transition: all .17s linear;
 
   &:hover {
-    color: lighten($accent, 15%);
+    background-color: lighten($accent, 6%);
+    border: 2px solid lighten($accent, 6%);
   }
 }
 
@@ -255,9 +261,6 @@
 
   .question-box {
     padding: 0;
-
-    input{
-    }
   }
 }
 
