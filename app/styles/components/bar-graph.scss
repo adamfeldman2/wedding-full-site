@@ -1,0 +1,52 @@
+.graph-wrapper {
+  display: flex;
+  width: 270px;
+  height: 150px;
+  border: 1px solid $black;
+  justify-content: space-between;
+
+  .column-wrapper {
+    display: flex;
+    height: 100%;
+    padding: 1em 1em 0;
+    align-items: center;
+    flex-direction: column;
+
+    .bars-wrapper {
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+
+      .avg-score-bar,
+      .school-score-bar {
+        display: inline-block;
+        width: 10px;
+        margin: 0;
+        animation: stretch 1.2s;
+      }
+
+      .avg-score-bar {
+        background-color: #c9cace;
+        margin-right: .1em;
+      }
+
+      .school-score-bar {
+        background-color: #66afbe;
+        margin-left: .1em;
+      }
+    }
+  }
+}
+
+@keyframes stretch {
+  0% {
+     transform: scaleY(0);
+     transform-origin: bottom;
+  }
+
+  100% {
+     transform: scaleY(1);
+     transform-origin: bottom;
+
+  }
+}
