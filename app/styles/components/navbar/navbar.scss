@@ -60,7 +60,6 @@
 @media (max-width: 790px) {
   .top-nav {
     padding: .3em 0;
-    // background-color: transparentize($offwhite,0.07);
 
     button {
       font-size: 1.5em;
@@ -75,17 +74,13 @@
         color: $accent;
       }
     }
-    //
-    // .x-icon {
-    //   display: none;
-    // }
 
     .nav-items {
       width: 100%;
+      padding: 1.4em 0;
+      align-items: center;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      padding: 1.4em 0 1.4em;
 
       &.menu-hidden {
         display: none;

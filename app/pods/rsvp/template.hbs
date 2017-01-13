@@ -19,20 +19,20 @@
           <div class="attending question-box">
             <label for="attending">Will you attend?</label>
             <div class="radioButtons">
-              <label class="radio" for="yes">Yes {{fa-icon 'circle-thin'}}</label>
-                {{radio-button value=true id="yes" checked=willAttend}}
-              <label class="radio" for="no">No {{fa-icon 'circle-thin'}}</label>
-                {{radio-button value=false id="no" checked=willAttend}}
+              {{radio-button value=true id="yes" checked=willAttend}}
+              <label class="radio" for="yes">Yes</label>
+              {{radio-button value=false id="no" checked=willAttend}}
+              <label class="radio" for="no">No</label>
             </div>
 
             <!-- If yes, above, show -->
             {{#if willAttend}}
             <label for="numOfPeople">Number of people in your party:</label>
             <div class="radioButtons">
-              <label class="radio" for="one">1 {{fa-icon 'circle-thin'}}</label>
-                {{radio-button value=false id="one" checked=numPeople}}
-              <label class="radio" for="two">2 {{fa-icon 'circle-thin'}}</label>
-                {{radio-button value=true id="two" checked=numPeople}}
+              {{radio-button value=false id="one" checked=numPeople}}
+              <label class="radio" for="one">1</label>
+              {{radio-button value=true id="two" checked=numPeople}}
+              <label class="radio" for="two">2</label>
             </div>
 
             {{/if}}
@@ -99,11 +99,11 @@
 
         {{#if submitMessage}}
           {{#if willAttend}}
-          <div class="submit-message">{{attendingSubmitMessage}}</div>
+          <div class="submit-message"><span class="attending-message">{{attendingSubmitMessage}}</span></div>
           {{else}}
-          <div class="submit-message">{{notAttendingSubmitMessage}}</div>
+          <div class="submit-message"><span class="not-attending-message">{{notAttendingSubmitMessage}}</span></div>
           {{/if}}
-          {{link-to 'Return to Home Page' 'home'}}
+          {{link-to 'Return to Home Page' 'home' class="return-home"}}
         {{/if}}
       </div>
       {{outlet}}
