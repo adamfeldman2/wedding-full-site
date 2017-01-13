@@ -3,10 +3,27 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'countdown-wrapper',
 
-  countdownGreeting: 'Wedding Countdown',
-
   weddingDate: 'August 27 2017 20:00:00 EST-0500',
   timeElapsed: 0,
+
+  daysRemaining: Ember.computed('weddingDate', function() {
+    const today = new Date();
+    const remaining = Date.parse(this.get('weddingDate')) - Date.parse(today);
+    const days = Math.floor( remaining/(1000*60*60*24) );
+
+    return days;
+  }),
+
+  countdownTitle: Ember.computed('daysRemaining', function() {
+    if (this.get('daysRemaining') >= 0) {
+      return 'Wedding Countdown';
+    } else {
+      return 'Living Happily Ever After:';
+    }
+
+  }),
+
+
 
   timeRemaining: Ember.computed('weddingDate', 'countdownGreeting', 'timeElapsed',  function() {
     const today = new Date();
@@ -34,7 +51,7 @@ export default Ember.Component.extend({
 
     } else {
       // this.set('countdownGreeting', 'Happily Ever After:');
-      const countup = `Living happily ever after for <span class="countdown-text">Days</span> <span class="countdown-number">${daysPassed}</span> <span class="countdown-text">Hours</span> <span class="countdown-number">${hoursPassed}</span> <span class="countdown-text">Minutes</span> <span class="countdown-number">${minutesPassed}</span> <span class="countdown-text">Seconds</span> <span class="countdown-number">${secondsPassed}</span>`;
+      const countup = `<div class="countdown-cell-wrapper"><div class="countdown-cell"><span class="countdown-text">Days</span> <span class="countdown-number">${daysPassed}</span></div> <div class="countdown-cell"><span class="countdown-text">Hours</span><span class="countdown-number">${hoursPassed}</span></div> <div class="countdown-cell"><span class="countdown-text">Minutes</span><span class="countdown-number">${minutesPassed}</span></div> <div class="countdown-cell"><span class="countdown-text">Seconds</span> <span class="countdown-number">${secondsPassed}</span></div></div>`;
       return new Ember.String.htmlSafe(countup);
     }
   }),
