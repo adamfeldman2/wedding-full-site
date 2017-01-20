@@ -7,6 +7,7 @@
   padding: 10em 0;
 
   .details-content{
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,7 +15,6 @@
     border: 10px double $black;
     padding: 4em 5em;
     background-color: transparentize($white,0.08);
-    position: relative;
 
 
 

@@ -8,42 +8,79 @@ export default Ember.Component.extend({
   minScore: 0,
 
   // Average yearly EQAO scores //
-  eqaoAvg2013: 2.3,
-  eqaoAvg2014: 2.5,
-  eqaoAvg2015: 2.5,
-  eqaoAvg2016: 2.7,
+  ratings: Ember.computed('averageRatings', 'schoolRatings', 'eqaoMaxScore', 'fraserMaxScore', function() {
+    const { averageRatings, schoolRatings, eqaoMaxScore, fraserMaxScore } = this.getProperties('averageRatings', 'schoolRatings', 'eqaoMaxScore', 'fraserMaxScore');
+    let ratings = [];
 
-  fraserAvg2013: 6.9,
-  fraserAvg2014: 7.1,
-  fraserAvg2015: 7.0,
-  fraserAvg2016: 6.6,
+    schoolRatings.forEach((schoolRating, index) => {
+      const averageRating = averageRatings[index];
+      const rating = {
+        year: schoolRating.year,
+        averageEqaoStyle: this.buildStyle(averageRating.eqao / eqaoMaxScore),
+        averageFraserStyle: this.buildStyle(averageRating.eqao / fraserMaxScore),
+        schoolEqaoStyle: this.buildStyle(schoolRating.eqao / eqaoMaxScore),
+        schoolFraserStyle: this.buildStyle(schoolRating.fraser / fraserMaxScore)
+      };
+      ratings.addObject(rating);
+    });
+    return ratings;
+  }),
 
-  year2013: {
-    eqaoScore: 2.9,
-    fraserScore: 8.3
-  },
+  averageRatings: [
+    {
+      year: 2013,
+      eqao: 2.3,
+      fraser: 6.9
+    },
+    {
+      year: 2014,
+      eqao: 2.5,
+      fraser: 7.1
+    },
+    {
+      year: 2015,
+      eqao: 2.3,
+      fraser: 6.9
+    },
+    {
+      year: 2016,
+      eqao: 2.5,
+      fraser: 7.1
+    }
+  ],
 
-  year2014: {
-    eqaoScore: 2.9,
-    fraserScore: 8.3
-  },
-
-  year2015: {
-    eqaoScore: 2.9,
-    fraserScore: 8.3
-  },
-
-  year2016: {
-    eqaoScore: 2.9,
-    fraserScore: 8.3
-  },
+  schoolRatings: [
+    {
+      year: 2013,
+      eqao: 3.9,
+      fraser: 8.3
+    },
+    {
+      year: 2014,
+      eqao: 2.7,
+      fraser: 7.3
+    },
+    {
+      year: 2015,
+      eqao: 2.9,
+      fraser: 8.3
+    },
+    {
+      year: 2016,
+      eqao: 0.7,
+      fraser: 7.3
+    }
+  ],
 
   avgPercentEqao2013: Ember.computed('eqaoAvg2013', 'eqaoMaxScore', function() {
     return this.get('eqaoAvg2013') / this.get('eqaoMaxScore') * 100;
   }),
 
+  buildStyle(value) {
+    return new Ember.String.htmlSafe(`height: ${value * 100}%;`);
+  },
+
   schoolPercentEqao2013: Ember.computed('year2013.{eqaoScore}', 'eqaoMaxScore', function() {
     return this.get('year2013.eqaoScore') / this.get('eqaoMaxScore') * 100;
   })
-
 });
