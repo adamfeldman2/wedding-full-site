@@ -17,12 +17,12 @@
 }
 
 .rsvp-box {
-  font-size: 1.3em;
+  font-size: 1.2em;
   position: absolute;
   top: 50%;
   display: flex;
   width: 60%;
-  padding: 2em;
+  padding: 1.6em 1.6em 1.3em 1.6em;
   border: 10px double $black;
   background-color: transparentize($white,0.08);
   align-items: center;
@@ -31,7 +31,7 @@
   transform: translateY(-50%);
 
   h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     position: relative;
     margin-bottom: .4em;
   }
