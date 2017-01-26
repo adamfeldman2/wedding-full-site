@@ -1,0 +1,15 @@
+<br />
+<h4>Car Brands</h4> <br />
+
+<div class="">
+  {{input value=car}}
+  <button type="button" name="button" {{action 'addCar' car}}>Add Car</button>
+</div>
+
+<br />
+
+{{#each carBrands as |carBrand|}}
+  <span>Car: {{carBrand}}</span> <br />
+{{/each}}
+
+<!-- <p>{{word}}</p> -->
