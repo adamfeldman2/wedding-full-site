@@ -2,10 +2,16 @@
   <div class="wrapper">
     <div class="home-content">
       <h1 class="fadeIn"><span class="line-break">Ali</span> <span class="line-break">&</span> Bryan</h1>
+      <!-- <span class="fadeIn">Save The Date...</span> -->
       <span class="fadeIn wedding-date">August 27, 2017</span>
-      {{#link-to 'rsvp'}}
-        <button class="buttonToRSVP fadeInSlow">RSVP NOW</button>
-      {{/link-to}}
+      <div class="homeButtons">
+        {{#link-to 'rsvp'}}
+        <button class="buttonToRSVP fadeInSlow">RSVP Now</button>
+        {{/link-to}}
+        {{#link-to 'details'}}
+        <button class="buttonToDetails fadeInSlow">Hotels and Directions</button>
+        {{/link-to}}
+      </div>
     </div>
   </div>
 </section>
