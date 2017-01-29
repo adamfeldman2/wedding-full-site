@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('contact');
   this.route('admin');
   this.route('playground');
+  this.route('accommodations');
 });
 
 export default Router;

@@ -30,7 +30,7 @@
 
   .contact-info {
     display: flex;
-    justify-content: space-around;;
+    justify-content: space-around;
     align-items: center;
     margin-top: 4em;
 
@@ -45,16 +45,27 @@
 
       .phone {
         margin-bottom: .5em;
-      }
 
-      i {
-        color: $black;
-        background-color: #222;
-      	-webkit-background-clip: text;
-      	-moz-background-clip: text;
-      	background-clip: text;
-      	color: transparent;
-      	text-shadow: rgba(255,255,255,0.45) 0px 3px 3px;
+        i {
+          color: $black;
+          background-color: #222;
+        	-webkit-background-clip: text;
+        	-moz-background-clip: text;
+        	background-clip: text;
+        	color: transparent;
+        	text-shadow: rgba(255,255,255,0.45) 0px 3px 3px;
+          transition: color .13s linear;
+        }
+
+        a {
+          color: $black;
+          text-decoration: underline;
+          transition: color .13s linear;
+
+          &:hover {
+            color: $accent;
+          }
+        }
       }
     }
   }

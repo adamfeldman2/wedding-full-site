@@ -62,10 +62,11 @@
       margin-bottom: 4em;
 
       countdown-wrapper {
-        border: 10px double $black;
-        padding: 1.7em 2.9em;
+        border: 5px double $black;
+        padding: 1.2em 2.3em;
 
         h2 {
+          font-size: 1.15em;
           margin-bottom: .2em;
         }
       }
@@ -88,7 +89,7 @@
           align-items: center;
 
           .countdown-number {
-            font-size: 1.5em;
+            font-size: 1.1em;
           }
 
           .countdown-text {
