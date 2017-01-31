@@ -59,7 +59,7 @@
     .wedding-countdown-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 4em;
+      margin-bottom: 4.5em;
 
       countdown-wrapper {
         border: 5px double $black;
@@ -110,65 +110,23 @@
       h4 {
         font-size: 1.6em;
         margin-bottom: .3em;
+        text-align: center;
+      }
+
+      h4:nth-child(3) {
+        margin-top: 3em;
       }
 
       p {
         font-size: 1.13em;
         font-weight: 300;
         line-height: 1.4;
+        text-align: center;
       }
     }
 
     .info-left {
       padding-right: 3.8em;
-
-      .dress-code {
-        margin-top: 1.6em;
-      }
-
-      .nearby {
-        margin: 2.1em 0 1.2em;
-      }
-
-      .hotels-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .hotel-item {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 2.8em;
-
-          img {
-            transition: all .09s linear;
-
-            &:hover {
-              -webkit-filter: drop-shadow(16px 16px 10px $accent);
-              filter: drop-shadow(0px 0px 2px transparentize($accent,0.3));
-            }
-          }
-
-          .hotel-directions {
-            font-size: .88em;
-            margin-top: .8em;
-            color: $black;
-            text-decoration: underline;
-            transition: .09s linear;
-
-            &:hover {
-              color: $accent;
-            }
-          }
-        }
-      }
-    }
-
-    .info-right {
-      padding-left: 3.8em;
 
       a {
         font-size: .97em;
@@ -179,6 +137,7 @@
         padding: .1em 0;
         position: relative;
         top: 1em;
+        margin-bottom: 3em;
 
         &:hover .car {
           position: relative;
@@ -203,8 +162,15 @@
         }
       }
 
+      .dress-code {
+        margin-top: 1.6em;
+      }
+    }
+
+    .info-right {
+      padding-left: 3.8em;
+
       .map-wrapper {
-        margin-top: 3.5em;
         -webkit-filter: grayscale(.15);
         filter: grayscale(.15);
 
@@ -217,9 +183,9 @@
   }
 
   // media queries //
-  @media (max-width: 970px) {
+  @media (max-width: 840px) {
     .info-wrapper {
-      flex-direction: column;
+      flex-direction: column-reverse;;
       justify-content: center;
       align-items: center;
 
@@ -230,7 +196,9 @@
         order: 1;
 
         .map-wrapper {
-          display: none;
+          // display: none;
+          width: 40%;
+          margin: 4em auto 0;
         }
       }
 
@@ -267,6 +235,12 @@
 
       .bracebridge-weather {
         display: none;
+      }
+
+      .info-right {
+        .map-wrapper {
+          width: 60%;
+        }
       }
     }
   }
@@ -315,6 +289,12 @@
 
         .info-right {
           padding: 0 0 4.7em;
+        }
+
+        .info-right {
+          .map-wrapper {
+            width: 80%;
+          }
         }
       }
     }
