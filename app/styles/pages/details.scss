@@ -18,7 +18,7 @@
 
     h1 {
       font-size: 3.7em;
-      margin: 0 auto 2em;
+      margin: 0 auto 1em;
       position: relative;
       text-align: center;
     }
@@ -59,7 +59,7 @@
       display: flex;
       justify-content: center;
       margin-bottom: 4.5em;
-      display: none;
+      // display: none;
 
       countdown-wrapper {
         border: 5px double $black;

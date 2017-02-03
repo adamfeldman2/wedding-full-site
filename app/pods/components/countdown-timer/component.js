@@ -55,13 +55,9 @@ export default Ember.Component.extend({
 
   updateTimer: Ember.on('init', function() {
     setInterval(() => {
-      this.incrementProperty('timeElapsed');
+      if (!this.get('isDestroyed') && !this.get('isDestroying')) {
+        this.incrementProperty('timeElapsed');
+      }
     }, 1000);
-  }),
-
-  destroyTimer: Ember.on('willDestroyElement', function() {
-    this._super(...arguments);
-    clearInterval(this.get('updateTimer'));
   })
-
 });
