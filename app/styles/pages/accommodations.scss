@@ -1,5 +1,4 @@
 .accommodations {
-  // height: 100vh;
   background-image: linear-gradient(rgba(0,0,0,.06),rgba(0,0,0,.06)), url(../images/image4.jpg);
   background-size: cover;
   background-position: bottom;
@@ -17,23 +16,22 @@
     background-color: transparentize($white,0.08);
 
     h1 {
-      // display: table;
       font-size: 3.7em;
-      margin: 0 auto .8em;
+      text-align: center;
+      margin-bottom: .8em;
       position: relative;
     }
   }
 
   .hotels-wrapper {
     display: flex;
-    justify-content: space-around;
+    margin: 0 auto;
     align-items: flex-end;
+    justify-content: center;
     flex-wrap: wrap;
 
-
-
     div:nth-child(2) {
-      margin: 0 1.2em;
+      margin: 0 2em;
 
       img {
         position: relative;
@@ -49,6 +47,7 @@
 
       img {
         transition: all .09s linear;
+        width: 100%;
 
         &:hover {
           -webkit-filter: drop-shadow(16px 16px 10px $accent);
@@ -95,4 +94,207 @@
       width: 100%;
     }
   }
+  // media queries //
+  @media (max-width: 840px) {
+    .info-wrapper {
+      flex-direction: column-reverse;;
+      justify-content: center;
+      align-items: center;
+
+      .info-right {
+        padding: 0 0 3.2em;
+        width: 100%;
+        text-align: center;
+        order: 1;
+
+        .map-wrapper {
+          // display: none;
+          width: 40%;
+          margin: 4em auto 0;
+        }
+      }
+
+      .info-left {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        order: 2;
+      }
+    }
+  }
+
+  @media (max-width: 885px) {
+    .details-content {
+      h1 {
+        font-size: 6.4vw;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .details-content {
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .details-content {
+      h1 {
+        font-size: 2.6em;
+        text-align: center;
+      }
+
+      .bracebridge-weather {
+        display: none;
+      }
+
+      .info-right {
+        .map-wrapper {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .details-content {
+        padding-left: 1em;
+        padding-right: 1em;
+
+      .wedding-countdown-wrapper {
+        justify-content: center;
+        margin-top: 1em;
+        margin-bottom: 4.5em;
+
+        countdown-wrapper {
+          border: none;
+          padding: 0;
+        }
+
+        h2 {
+          font-size: 1.4em;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 426px) {
+    .details-content{
+      .info-wrapper {
+        h4 {
+          font-size: 1.2em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .dress-code {
+          margin-top: 2.6em;
+        }
+
+        .nearby {
+          margin: 2.9em 0 1.2em;
+        }
+
+        .info-right {
+          padding: 0 0 4.7em;
+        }
+
+        .info-right {
+          .map-wrapper {
+            width: 80%;
+          }
+        }
+      }
+    }
+    .hide-nearby {
+      display: none;
+    }
+  }
+
+  @media (max-width: 920px) {
+    .accommodations-content {
+      padding: 4em 1em;
+
+      h1 {
+        font-size: 5.6vw;
+        margin-bottom: .5em;
+      }
+    }
+  }
+
+  @media (max-width: 747px) {
+    .hotels-wrapper {
+
+      .hotel-link {
+        // width: 10%;
+      }
+
+      .hotel-item {
+        font-size: .9em;
+      }
+    }
+
+    @media (max-width: 681px) {
+      .accommodations-content {
+        h1 {
+          font-size: 5.6vw;
+          margin-bottom: 1.8em;
+        }
+      }
+    }
+
+    @media (max-width: 550px) {
+      .hotels-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div:nth-child(1) {
+          margin-bottom: 3em;
+        }
+
+        div:nth-child(2) {
+          margin: 1.5em 0;
+        }
+
+        .hotel-item{
+          width: 150px;
+          text-align: center;
+        }
+
+      }
+    }
+
+    @media (max-width: 450px) {
+      .accommodations-content {
+        h1 {
+          margin-bottom: 2.8em;
+        }
+      }
+
+      .hotels-wrapper {
+        .hotel-item{
+          width: 100px;
+
+          .taboo-image {
+            width: 75px;
+          }
+        }
+      }
+      .accommodations-image {
+        display: none;
+      }
+    }
+  }
+
+
+
+
+
+
+
 }

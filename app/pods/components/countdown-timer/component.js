@@ -20,10 +20,7 @@ export default Ember.Component.extend({
     } else {
       return 'Living Happily Ever After:';
     }
-
   }),
-
-
 
   timeRemaining: Ember.computed('weddingDate', 'countdownGreeting', 'timeElapsed',  function() {
     const today = new Date();
@@ -60,6 +57,11 @@ export default Ember.Component.extend({
     setInterval(() => {
       this.incrementProperty('timeElapsed');
     }, 1000);
+  }),
+
+  destroyTimer: Ember.on('willDestroyElement', function() {
+    this._super(...arguments);
+    clearInterval(this.get('updateTimer'));
   })
 
 });

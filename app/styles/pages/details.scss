@@ -17,10 +17,10 @@
     background-color: transparentize($white,0.08);
 
     h1 {
-      // display: table;
       font-size: 3.7em;
-      margin: 0 auto .8em;
+      margin: 0 auto 2em;
       position: relative;
+      text-align: center;
     }
 
     .bracebridge-weather {
@@ -35,7 +35,6 @@
       span:first-child {
         font-size: .87em;
         display: block;
-        // margin-bottom: -.6em;
       }
 
       .temp-icon-wrapper {
@@ -60,6 +59,7 @@
       display: flex;
       justify-content: center;
       margin-bottom: 4.5em;
+      display: none;
 
       countdown-wrapper {
         border: 5px double $black;
@@ -185,7 +185,7 @@
   // media queries //
   @media (max-width: 840px) {
     .info-wrapper {
-      flex-direction: column-reverse;;
+      flex-direction: column-reverse;
       justify-content: center;
       align-items: center;
 
@@ -196,7 +196,6 @@
         order: 1;
 
         .map-wrapper {
-          // display: none;
           width: 40%;
           margin: 4em auto 0;
         }
