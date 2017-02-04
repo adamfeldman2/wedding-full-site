@@ -14,12 +14,23 @@
     border: 10px double $black;
     padding: 4em 5em;
     background-color: transparentize($white,0.08);
+    margin: 0 2%;
 
     h1 {
       font-size: 3.7em;
       text-align: center;
       margin-bottom: .8em;
       position: relative;
+    }
+
+    span {
+      text-align: center;
+      margin-top: 4.5em;
+      font-weight: bold;
+
+      @media (max-width: 550px) {
+        font-size: .85em;
+      }
     }
   }
 
@@ -86,12 +97,15 @@
     }
   }
 
+
   .accommodations-image {
-    width: 77%;
+    width: 90%;
     margin: 4.5em auto 0;
 
     img {
       width: 100%;
+      -webkit-filter: grayscale(.3);
+      filter: grayscale(.3);
     }
   }
   // media queries //

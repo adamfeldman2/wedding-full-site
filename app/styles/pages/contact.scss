@@ -15,6 +15,7 @@
   border: 10px double $black;
   padding: 4em 5em;
   background-color: transparentize($white,0.08);
+  margin: 0 2%;
 
   h1 {
     font-size: 3.7em;
@@ -76,8 +77,8 @@
 
     img {
       width: 100%;
-      -webkit-filter: contrast(1.05);
-      filter: contrast(1.05);
+      -webkit-filter: grayscale(.35);
+      filter: grayscale(.35);
       transition: all 1s;
     }
   }
