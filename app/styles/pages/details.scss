@@ -24,38 +24,6 @@
       text-align: center;
     }
 
-    .bracebridge-weather {
-      position: absolute;
-      left: .3em;
-      top: .3em;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      span:first-child {
-        font-size: .87em;
-        display: block;
-      }
-
-      .temp-icon-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        span:first-child {
-          font-size: .8em;
-          margin-right: .3em;
-        }
-
-        img {
-          width: 1.6em;
-          position: relative;
-          top: 0em;
-        }
-      }
-    }
-
     .wedding-countdown-wrapper {
       display: flex;
       justify-content: center;

@@ -42,7 +42,7 @@
     flex-wrap: wrap;
 
     div:nth-child(2) {
-      margin: 0 2em;
+      margin: 0 4em;
 
       img {
         position: relative;
@@ -87,7 +87,7 @@
       justify-content: center;
 
       div:nth-child(2) {
-        margin: 0 1.2em;
+        margin: 0 2em;
       }
 
       div:nth-child(3) {
@@ -104,8 +104,6 @@
 
     img {
       width: 100%;
-      -webkit-filter: grayscale(.3);
-      filter: grayscale(.3);
     }
   }
   // media queries //

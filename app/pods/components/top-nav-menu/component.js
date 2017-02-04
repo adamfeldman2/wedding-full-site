@@ -12,10 +12,6 @@ export default Ember.Component.extend({
     Ember.$(document).off('click', this.clickHandlerFunction);
   }),
 
-  clickHandlerFunction(event) {
-    console.log(event.target, Ember.$('top-nav-menu'));
-  },
-
   actions: {
     toggleMenu() {
       this.toggleProperty('showHamburger');
