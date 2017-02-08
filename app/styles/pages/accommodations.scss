@@ -37,13 +37,10 @@
   .hotels-wrapper {
     display: flex;
     margin: 0 auto;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: baseline;
     flex-wrap: wrap;
 
     div:nth-child(2) {
-      margin: 0 4em;
-
       img {
         position: relative;
         bottom: .7em;
@@ -55,6 +52,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 33.33%;
+      height: 170px;
 
       img {
         transition: all .09s linear;
@@ -77,6 +76,11 @@
           color: $accent;
         }
       }
+
+      .rates {
+        font-size: .77em;
+        margin: 10px 0 0;
+      }
     }
 
     @media (max-width: 1000px) {
@@ -86,14 +90,13 @@
     @media (max-width: 873px) {
       justify-content: center;
 
+      div:nth-child(1) {
+        margin: 0 2em 0 0;
+      }
+
       div:nth-child(2) {
-        margin: 0 2em;
+        margin: 0 0 0 2em;
       }
-
-      div:nth-child(3) {
-        margin: 2em 0 0;
-      }
-
     }
   }
 
@@ -241,10 +244,6 @@
   @media (max-width: 747px) {
     .hotels-wrapper {
 
-      .hotel-link {
-        // width: 10%;
-      }
-
       .hotel-item {
         font-size: .9em;
       }
@@ -266,7 +265,7 @@
         align-items: center;
 
         div:nth-child(1) {
-          margin-bottom: 3em;
+          margin: 0;
         }
 
         div:nth-child(2) {
@@ -274,7 +273,7 @@
         }
 
         .hotel-item{
-          width: 150px;
+          width: 250px;
           text-align: center;
         }
 
@@ -290,7 +289,7 @@
 
       .hotels-wrapper {
         .hotel-item{
-          width: 100px;
+          width: 190px;
 
           .taboo-image {
             width: 75px;
