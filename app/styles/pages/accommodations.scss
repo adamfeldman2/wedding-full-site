@@ -40,13 +40,6 @@
     align-items: baseline;
     flex-wrap: wrap;
 
-    div:nth-child(2) {
-      img {
-        position: relative;
-        bottom: .7em;
-      }
-    }
-
     .hotel-item {
       display: flex;
       flex-direction: column;
@@ -269,7 +262,7 @@
         }
 
         div:nth-child(2) {
-          margin: 1.5em 0;
+          margin: 1.5em 0 3em;
         }
 
         .hotel-item{
