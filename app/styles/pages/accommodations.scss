@@ -90,6 +90,14 @@
       div:nth-child(2) {
         margin: 0 0 0 2em;
       }
+
+      div:nth-child(3) {
+        margin: 0 2em 0 0;
+      }
+
+      div:nth-child(4) {
+        margin: 0 0 0 2em;
+      }
     }
   }
 
@@ -265,6 +273,14 @@
           margin: 1.5em 0 3em;
         }
 
+        div:nth-child(3) {
+          margin: 0;
+        }
+
+        div:nth-child(4) {
+          margin: 2.5em 0 0;
+        }
+
         .hotel-item{
           width: 250px;
           text-align: center;
@@ -285,7 +301,7 @@
           width: 190px;
 
           .taboo-image {
-            width: 75px;
+            width: 100px;
           }
         }
       }
