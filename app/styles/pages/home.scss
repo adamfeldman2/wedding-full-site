@@ -13,6 +13,13 @@
     align-items: center;
     position: relative;
 
+    .countdown-timer {
+      font-size: 1.5em;
+      margin-bottom: .5em;
+      text-transform: capitalize;
+      text-shadow: 0px 1px 3px $black;
+    }
+
     h1 {
       font-size: 7em;
       position: relative;
@@ -32,6 +39,7 @@
     }
 
     .location {
+      display: none;
       font-size: 1.3em;
       margin-top: .3em;
       text-shadow: 0px 1px 1px $black;
@@ -103,7 +111,8 @@
 
   @media (max-width: 700px) {
     .home-content {
-      h1 {
+      .countdown-timer {
+        font-size: 1.3em;
       }
 
       .wedding-date {
@@ -124,6 +133,10 @@
 
   @media (max-width: 550px) {
     .home-content {
+      .countdown-timer {
+        display: none;
+      }
+
       h1 {
         font-size: 3.7em;
         text-align: center;

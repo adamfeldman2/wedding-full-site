@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   adminUsername: '',
   adminPassword: '',
   adminUsernameTrue: Ember.computed.equal('adminUsername', 'user1'),
-  adminPasswordTrue: Ember.computed.equal('adminPassword', 'robot1'),
+  adminPasswordTrue: Ember.computed.equal('adminPassword', 'tamarack'),
   allowAccess: Ember.computed.and('adminUsernameTrue', 'adminPasswordTrue'),
 
   actions: {

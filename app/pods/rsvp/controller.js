@@ -7,25 +7,7 @@ export default Ember.Controller.extend({
 
   countUp: 0,
 
-  willAttend: null,
-  notWillAttend: Ember.computed.equal('willAttend', false),
-  numPeople: null,
-  notNumPeople: Ember.computed.equal('numPeople', false),
-  guestName: '',
-  guestNameValid: Ember.computed.gte('guestName.length', 3),
-
-  userDietary: '',
-  guestDietary: '',
-
-  trueAttending1: Ember.computed.and('willAttend','numPeople', 'guestNameValid'),
-
-  trueAttending2: Ember.computed.and('willAttend','notNumPeople'),
-
-  // One of these properties must be true to activate next button
-  isValidAttending: Ember.computed.or('trueAttending1','trueAttending2','notWillAttend'),
-
-  isDisabledAttending: Ember.computed.not('isValidAttending'),
-
+  willAttend: true,
 
   danceValue: '',
   danceValueContent: Ember.computed.gte('danceValue.length', 4),
@@ -34,53 +16,17 @@ export default Ember.Controller.extend({
 
   attendingSubmitMessage: 'Your submission has been received! We\'ll see you on August 27th! 🎉',
 
-  notAttendingSubmitMessage: 'It won\'t be the same without you, but we understand. Take care!',
-
   commentsBackButton: '',
 
 
   actions: {
     backToNameQuestion() {
-      Ember.$('.attending').hide();
+      Ember.$('.dance').hide();
       Ember.$('.fullName').show();
     },
 
-    displayAttendingQuestion() {
-      Ember.$('.fullName').hide();
-      Ember.$('.dance').hide();
-      this.set('displayAttendingQuestion', true);
-      Ember.$('.attending').show();
-    },
-
-    backToAttendingQuestion() {
-      Ember.$('.dietary').hide();
-      Ember.$('.attending').show();
-      Ember.$('.comments').hide();
-    },
-
-    displayDietaryQuestion() {
-
-      if(this.get('willAttend') === false) {
-        Ember.$('.attending').hide();
-        this.set('displayCommentsQuestion', true);
-        Ember.$('.comments').show();
-        this.set('commentsBackButton','backToAttendingQuestion');
-      } else {
-        Ember.$('.attending').hide();
-        this.set('displayDietaryQuestion', true);
-        Ember.$('.dietary').show();
-        this.set('commentsBackButton','backToDanceQuestion');
-      }
-
-    },
-
-    backToDietaryQuestion() {
-      Ember.$('.dance').hide();
-      Ember.$('.dietary').show();
-    },
-
     displayDanceQuestion () {
-      Ember.$('.dietary').hide();
+      Ember.$('.fullName').hide();
       this.set('displayDanceQuestion', true);
       Ember.$('.dance').show();
     },
@@ -97,24 +43,12 @@ export default Ember.Controller.extend({
     },
 
     submitRSVP() {
-
       const userName = this.get('nameValue');
-      const willAttend = this.get('willAttend');
-      const numPeople = this.get('numPeople');
-      const guestName = this.get('guestName');
-      const userDietary = this.get('userDietary');
-      const guestDietary = this.get('guestDietary');
       const dance = this.get('danceValue');
       const comments = this.get('commentsValue');
-
       const newRSVP = this.store.createRecord('rsvp',
       {
         userName: userName,
-        willAttend: willAttend,
-        numPeople: numPeople,
-        guestName: guestName,
-        userDietary: userDietary,
-        guestDietary: guestDietary,
         dance: dance,
         comments:comments
       });

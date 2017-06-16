@@ -9,11 +9,12 @@ module.exports = function(environment) {
     locationType: 'auto',
 
   firebase: {
-    apiKey: 'AIzaSyClfXtqFt49pcuGy_RfcGe2OORm7xACwiM',
-    authDomain: 'weiny-wedding-database.firebaseapp.com',
-    databaseURL: 'https://weiny-wedding-database.firebaseio.com',
-    storageBucket: 'weiny-wedding-database.appspot.com',
-    messagingSenderId: '633203359701'
+    apiKey: "AIzaSyA6kdnKoqQJ7wDF7HhOWjQk-hogemGxuF0",
+    authDomain: "weiny-wedding-full-site.firebaseapp.com",
+    databaseURL: "https://weiny-wedding-full-site.firebaseio.com",
+    projectId: "weiny-wedding-full-site",
+    storageBucket: "weiny-wedding-full-site.appspot.com",
+    messagingSenderId: "465394055234"
   },
 
   contentSecurityPolicy: {

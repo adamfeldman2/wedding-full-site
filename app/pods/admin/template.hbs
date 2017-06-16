@@ -15,23 +15,13 @@
     {{#unless displayTable}}
       <table>
         <tr>
-          <th>User's Name</th>
-          <th>Attending?</th>
-          <th>Ppl in Party</th>
           <th>Guest's Name</th>
-          <th>User Diet Restrict.</th>
-          <th>Guest Diet Restrict.</th>
           <th>Song Request</th>
           <th>Comments</th>
         </tr>
         {{#each model as |rsvp|}}
         <tr class=" tableRows">
           <td>{{rsvp.userName}}</td>
-          <td>{{if rsvp.willAttend 'Yes' 'No'}}</td>
-          <td>{{if rsvp.numPeople '2' '1'}}</td>
-          <td>{{rsvp.guestName}}</td>
-          <td>{{rsvp.userDietary}}</td>
-          <td>{{rsvp.guestDietary}}</td>
           <td>{{rsvp.dance}}</td>
           <td>{{rsvp.comments}}</td>
         </tr>

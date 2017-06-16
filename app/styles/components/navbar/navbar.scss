@@ -48,16 +48,16 @@
 
 // media queries //
 
-// Greater than 790px //
-@media (min-width: 791px) {
+// Greater than 940px //
+@media (min-width: 941px) {
   .hamburger-icon, .x-icon {
     display: none;
   }
 }
 
 
-// 790px and smaller //
-@media (max-width: 790px) {
+// 940px and smaller //
+@media (max-width: 940px) {
   .top-nav {
     padding: .3em 0;
 
@@ -96,5 +96,4 @@
       }
     }
   }
-
 }

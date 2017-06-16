@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('home');
   this.route('couple');
   this.route('details');
-  this.route('rsvp');
+  this.route('rsvp', {path: 'song-request'});
   this.route('contact');
   this.route('admin');
   this.route('playground');
