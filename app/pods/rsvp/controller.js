@@ -57,11 +57,6 @@ export default Ember.Controller.extend({
         Ember.$('.comments').hide();
         this.set('submitMessage', true);
       });
-    },
-
-    takeUserHome() {
-      window.location.reload(true);
-      this.transitionToRoute('home');
     }
   }
 });
